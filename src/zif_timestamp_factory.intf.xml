@@ -5,11 +5,38 @@
    <VSEOINTERF>
     <CLSNAME>ZIF_TIMESTAMP_FACTORY</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Timestamp factory</DESCRIPT>
+    <DESCRIPT>Creates instances of {@link zif_timestamp}</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CURRENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} of the system time and date</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_SYSTEM_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

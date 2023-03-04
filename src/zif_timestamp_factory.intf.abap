@@ -16,7 +16,7 @@ interface zif_timestamp_factory public.
             importing
               i_date type xsddate_d
               i_time type xsdtime_t
-              i_timezone type ttzz-tzone
+              i_timezone type ref to zif_time_zone
             returning
               value(r_timestamp) type ref to zif_timestamp
             raising
@@ -54,7 +54,6 @@ interface zif_timestamp_factory public.
 
   "! <p class="shorttext synchronized" lang="EN">Creates a {@link zif_timestamp} with the provided values</p>
   "! Considers current user master record time-zone
-  "! @parameter i_user |
   "! @parameter i_date |
   "! @parameter i_time |
   "! @parameter r_timestamp |
@@ -62,6 +61,38 @@ interface zif_timestamp_factory public.
             importing
               i_date type xsddate_d
               i_time type xsdtime_t
+            returning
+              value(r_timestamp) type ref to zif_timestamp
+            raising
+              zcx_timestamp.
+
+  methods from_country_tz
+            importing
+              i_date type xsddate_d
+              i_time type xsdtime_t
+              i_country type land1
+            returning
+              value(r_timestamp) type ref to zif_timestamp
+            raising
+              zcx_timestamp.
+
+  methods from_country_and_region_tz
+            importing
+              i_date type xsddate_d
+              i_time type xsdtime_t
+              i_country type land1
+              i_region type regio
+            returning
+              value(r_timestamp) type ref to zif_timestamp
+            raising
+              zcx_timestamp.
+
+  methods from_country_and_zip_code_tz
+            importing
+              i_date type xsddate_d
+              i_time type xsdtime_t
+              i_country type land1
+              i_zip_code type tznzipgene
             returning
               value(r_timestamp) type ref to zif_timestamp
             raising

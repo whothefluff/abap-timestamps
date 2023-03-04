@@ -5,12 +5,19 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_TIMESTAMP</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Timestamp</DESCRIPT>
+    <DESCRIPT>A timestamp of type p in form yyyymmddhhmmss.sssssss</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new timestamp with the provided value</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

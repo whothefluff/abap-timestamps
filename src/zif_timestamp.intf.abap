@@ -82,9 +82,58 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp |
   methods to_date
             importing
-              i_timezone type ttzz-tzone
+              i_timezone type ref to zif_time_zone
             returning
-              value(r_timestamp_date) type xsddate_d
+              value(r_timestamp_date) type ref to zif_date
+            raising
+              zcx_timestamp
+              zcx_time_zone.
+
+  "! <p class="shorttext synchronized" lang="EN">Converts it to date and returns it if value and timezone are valid</p>
+  "! @parameter i_timezone | Conversion from UTC to provided
+  "! @parameter r_timestamp_date |
+  "! @raising zcx_timestamp |
+  methods to_date_for_tz_of_user
+            importing
+              i_user type uname
+            returning
+              value(r_timestamp_date) type ref to zif_date
+            raising
+              zcx_timestamp.
+
+  "! <p class="shorttext synchronized" lang="EN">Converts it to date and returns it if value and timezone are valid</p>
+  "! @parameter i_timezone | Conversion from UTC to provided
+  "! @parameter r_timestamp_date |
+  "! @raising zcx_timestamp |
+  methods to_date_for_tz_of_current_user
+            returning
+              value(r_timestamp_date) type ref to zif_date
+            raising
+              zcx_timestamp.
+
+  methods to_date_for_tz_of_country
+            importing
+              i_country type land1
+            returning
+              value(r_timestamp_date) type ref to zif_date
+            raising
+              zcx_timestamp.
+
+  methods to_date_for_tz_of_ctry_region
+            importing
+              i_country type land1
+              i_region type regio
+            returning
+              value(r_timestamp_date) type ref to zif_date
+            raising
+              zcx_timestamp.
+
+  methods to_date_for_tz_of_ctry_zip
+            importing
+              i_country type land1
+              i_zip_code type tznzipgene
+            returning
+              value(r_timestamp_date) type ref to zif_date
             raising
               zcx_timestamp.
 
