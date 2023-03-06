@@ -17,6 +17,8 @@ class zcl_time_factory definition
              from_formatted for zif_time_factory~from_formatted,
              from_iso_8601_formatted for zif_time_factory~from_iso_8601_formatted,
              from_timestamp for zif_time_factory~from_timestamp,
+             from_timestamp_to_utc_tz for zif_time_factory~from_timestamp_to_utc_tz,
+             from_timestamp_to_default_tz for zif_time_factory~from_timestamp_to_default_tz,
              from_timestamp_to_country_tz for zif_time_factory~from_timestamp_to_country_tz,
              from_timestamp_to_ctry_regn_tz for zif_time_factory~from_timestamp_to_ctry_regn_tz,
              from_timestamp_to_ctry_zip_tz for zif_time_factory~from_timestamp_to_ctry_zip_tz,
@@ -126,17 +128,17 @@ class zcl_time_factory implementation.
 
   endmethod.
   method zif_time_factory~from_timestamp.
-
-    convert time stamp i_timestamp->value( ) time zone i_to_time_zone->valid_value_or_error( ) into time data(time).
+                                                                       "no need to use 'valid_value_or_error' since this statement checks anyway
+    convert time stamp i_timestamp->value( ) time zone i_to_time_zone->value( ) into time data(time).
 
     r_time = switch #( sy-subrc
                        when 0
                        then new zcl_time( time )
                        when 4
-                       then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp was not converted into a local time'(001) ) )
+                       then throw zcx_time_zone( new zcl_text_symbol_msg( 'Time stamp was not converted into a local time'(001) ) )
                        when 8
-                       then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
-                       when 12
+                       then throw zcx_time_zone( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
+                       when 12 "#EC NUMBER_OK
                        then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
                        else throw zcx_timestamp( ) ).
 
@@ -170,7 +172,7 @@ class zcl_time_factory implementation.
   method zif_time_factory~from_timestamp_to_system_tz.
 
     r_time = me->from_timestamp( i_timestamp = i_timestamp
-                                 i_to_time_zone = me->a_time_zone_factory->from_system( ) ).
+                                 i_to_time_zone = me->a_time_zone_factory->system( ) ).
 
   endmethod.
   method zif_time_factory~from_timestamp_to_user_tz.
@@ -183,6 +185,18 @@ class zcl_time_factory implementation.
 
     r_time = me->from_formatted( i_time = i_time
                                  i_format = value #( ) ).
+
+  endmethod.
+  method zif_time_factory~from_timestamp_to_default_tz.
+
+    r_time = me->from_timestamp( i_timestamp = i_timestamp
+                                 i_to_time_zone = me->a_time_zone_factory->default( ) ).
+
+  endmethod.
+  method zif_time_factory~from_timestamp_to_utc_tz.
+
+    r_time = me->from_timestamp( i_timestamp = i_timestamp
+                                 i_to_time_zone = me->a_time_zone_factory->utc( ) ).
 
   endmethod.
 

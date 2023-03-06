@@ -52,6 +52,16 @@
      <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_DEFAULT_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_SYSTEM_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to date and returns it if value is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_TZ_OF_CURRENT_USER</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
@@ -62,7 +72,37 @@
      <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_UTC_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>TO_TIME</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_DEFAULT_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_SYSTEM_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to time and returns it if value is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_TZ_OF_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_TZ_OF_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
     </SEOCOMPOTX>

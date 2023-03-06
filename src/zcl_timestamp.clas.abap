@@ -21,24 +21,45 @@ class zcl_timestamp definition
              add for zif_timestamp~add,
              subtract for zif_timestamp~subtract,
              seconds_of_difference_with for zif_timestamp~seconds_of_difference_with,
+             to_date_for_utc_tz for zif_timestamp~to_date_for_utc_tz,
+             to_date_for_system_tz for zif_timestamp~to_date_for_system_tz,
+             to_date_for_default_tz for zif_timestamp~to_date_for_default_tz,
              to_date_for_tz_of_country for zif_timestamp~to_date_for_tz_of_country,
              to_date_for_tz_of_ctry_region for zif_timestamp~to_date_for_tz_of_ctry_region,
              to_date_for_tz_of_ctry_zip for zif_timestamp~to_date_for_tz_of_ctry_zip,
              to_date_for_tz_of_current_user for zif_timestamp~to_date_for_tz_of_current_user,
-             to_date_for_tz_of_user for zif_timestamp~to_date_for_tz_of_user.
+             to_date_for_tz_of_user for zif_timestamp~to_date_for_tz_of_user,
+             to_time_for_utc_tz for zif_timestamp~to_time_for_utc_tz,
+             to_time_for_system_tz for zif_timestamp~to_time_for_system_tz,
+             to_time_for_default_tz for zif_timestamp~to_time_for_default_tz,
+             to_time_for_tz_of_country for zif_timestamp~to_time_for_tz_of_country,
+             to_time_for_tz_of_ctry_region for zif_timestamp~to_time_for_tz_of_ctry_region,
+             to_time_for_tz_of_ctry_zip for zif_timestamp~to_time_for_tz_of_ctry_zip,
+             to_time_for_tz_of_current_user for zif_timestamp~to_time_for_tz_of_current_user,
+             to_time_for_tz_of_user for zif_timestamp~to_time_for_tz_of_user.
 
     "! <p class="shorttext synchronized" lang="EN">Creates a new timestamp with the provided value</p>
     "! Allows invalid values
     "! @parameter i_value |
     methods constructor
               importing
-                i_value type zif_timestamp=>t_value.
+                i_value type zif_timestamp=>t_value
+                i_date_factory type ref to zif_date_factory optional
+                i_time_factory type ref to zif_time_factory optional.
+
+    class-methods class_constructor.
 
   protected section.
 
     data a_value type zif_timestamp=>t_value.
 
-    data a_date_factory type ref to zcl_date_factory.
+    data a_date_factory type ref to zif_date_factory.
+
+    data a_time_factory type ref to zif_time_factory.
+
+    class-data a_default_date_factory type ref to zif_date_factory.
+
+    class-data a_default_time_factory type ref to zif_time_factory.
 
 endclass.
 
@@ -46,11 +67,24 @@ endclass.
 
 class zcl_timestamp implementation.
 
+  method class_constructor.
+
+    zcl_timestamp=>a_default_date_factory = new zcl_date_factory( ).
+
+    zcl_timestamp=>a_default_time_factory = new zcl_time_factory( ).
+
+  endmethod.
   method constructor.
 
     me->a_value = i_value.
 
-    me->a_date_factory = new zcl_date_factory( ).
+    me->a_date_factory = cond #( when i_date_factory is supplied
+                                 then i_date_factory
+                                 else zcl_timestamp=>a_default_date_factory ).
+
+    me->a_time_factory = cond #( when i_time_factory is supplied
+                                 then i_time_factory
+                                 else zcl_timestamp=>a_default_time_factory ).
 
   endmethod.
   method zif_timestamp~value.
@@ -66,14 +100,15 @@ class zcl_timestamp implementation.
   endmethod.
   method zif_timestamp~to_time.
 
-    convert time stamp me->value( ) time zone i_timezone into time r_timestamp_time.
+    r_timestamp_time = me->a_time_factory->from_timestamp( i_timestamp = me
+                                                           i_to_time_zone = i_timezone ).
 
   endmethod.
   method zif_timestamp~check.
 
     convert time stamp me->value( ) time zone '' into date data(dummy_date) time data(dummy_time) ##NEEDED.
 
-    r_self = cond #( when sy-subrc ne 12
+    r_self = cond #( when sy-subrc ne 12 "#EC NUMBER_OK
                      then me
                      else throw zcx_timestamp( ) ).
 
@@ -95,7 +130,7 @@ class zcl_timestamp implementation.
   endmethod.
   method zif_timestamp~short_value.
 
-    cl_abap_tstmp=>move( exporting tstmp_src = conv timestampl( me->value( ) )
+    cl_abap_tstmp=>move( exporting tstmp_src = conv timestampl( me->valid_value_or_error( ) )
                          importing tstmp_tgt = r_short_value ).
 
   endmethod.
@@ -137,7 +172,7 @@ class zcl_timestamp implementation.
   endmethod.
   method zif_timestamp~is_daylight_saving_time.
 
-    convert time stamp me->value( ) time zone i_timezone into date data(dummy_date) daylight saving time data(is_dst) ##NEEDED.
+    convert time stamp me->value( ) time zone i_timezone->valid_value_or_error( ) into date data(dummy_date) daylight saving time data(is_dst) ##NEEDED.
 
     r_is_summer_time = switch #( sy-subrc
                                  when 0
@@ -146,7 +181,7 @@ class zcl_timestamp implementation.
                                  then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp was not converted into a local time'(001) ) )
                                  when 8
                                  then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
-                                 when 12
+                                 when 12 "#EC NUMBER_OK
                                  then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
                                  else throw zcx_timestamp( ) ).
 
@@ -158,7 +193,7 @@ class zcl_timestamp implementation.
                seconds_in_a_day type i value 86400.
 
     try.
-
+                                                                 "no need to use 'valid_value_or_error' because standard class checks values
       me->a_value = cl_abap_tstmp=>add( tstmp = conv timestampl( me->value( ) )
                                         secs = i_seconds + ( i_minutes * seconds_in_a_minute ) + ( i_hours * seconds_in_an_hour ) + ( i_days * seconds_in_a_day ) ).
 
@@ -183,7 +218,7 @@ class zcl_timestamp implementation.
   method zif_timestamp~seconds_of_difference_with.
 
     try.
-
+                                                         "no need to use 'valid_value_or_error' because standard class checks values
       r_diff_in_secs = cl_abap_tstmp=>subtract( tstmp1 = me->value( )
                                                 tstmp2 = i_another_timestamp->value( ) ).
 
@@ -224,6 +259,67 @@ class zcl_timestamp implementation.
 
     r_timestamp_date = me->a_date_factory->from_timestamp_to_user_tz( i_timestamp = me
                                                                       i_user = i_user ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_tz_of_country.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_country_tz( i_timestamp = me
+                                                                         i_country = i_country ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_tz_of_ctry_region.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_ctry_regn_tz( i_timestamp = me
+                                                                           i_country = i_country
+                                                                           i_region = i_region ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_tz_of_ctry_zip.
+
+    r_timestamp_date = me->a_time_factory->from_timestamp_to_ctry_zip_tz( i_timestamp = me
+                                                                          i_country = i_country
+                                                                          i_zip_code = i_zip_code ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_tz_of_current_user.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_curr_user_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_tz_of_user.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_user_tz( i_timestamp = me
+                                                                      i_user = i_user ).
+
+  endmethod.
+  method zif_timestamp~to_date_for_default_tz.
+
+    r_timestamp_date = me->a_date_factory->from_timestamp_to_default_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_date_for_utc_tz.
+
+    r_timestamp_date = me->a_date_factory->from_timestamp_to_utc_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_default_tz.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_default_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_utc_tz.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_utc_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_date_for_system_tz.
+
+    r_timestamp_date = me->a_date_factory->from_timestamp_to_system_tz( me ).
+
+  endmethod.
+  method zif_timestamp~to_time_for_system_tz.
+
+    r_timestamp_time = me->a_time_factory->from_timestamp_to_system_tz( me ).
 
   endmethod.
 

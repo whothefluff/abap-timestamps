@@ -12,11 +12,69 @@ class zcl_time_zone_factory definition
              from_country_and_zip_code for zif_time_zone_factory~from_country_and_zip_code ,
              from_current_user for zif_time_zone_factory~from_current_user,
              from_user for zif_time_zone_factory~from_user,
+             from_user_or_fallback for zif_time_zone_factory~from_user_or_fallback,
              utc for zif_time_zone_factory~utc,
-             from_system for zif_time_zone_factory~from_system.
-
+             from_system for zif_time_zone_factory~system.
 
   protected section.
+
+    types: begin of t_format,
+             key type zif_time_zone=>t_value,
+             value type ref to zif_time_zone,
+           end of t_format,
+           t_time_zone_map type hashed table of zcl_time_zone_factory=>t_format with unique key key.
+
+    types: begin of t_country_time_zone,
+             key type land1,
+             value type zif_time_zone=>t_value,
+           end of t_country_time_zone,
+           t_country_time_zone_map type hashed table of zcl_time_zone_factory=>t_country_time_zone with unique key key.
+
+    types: begin of t_cntry_reg_key,
+             country type land1,
+             region type regio,
+           end of t_cntry_reg_key,
+           begin of t_cntry_reg_time_zone,
+             key type zcl_time_zone_factory=>t_cntry_reg_key,
+             value type zif_time_zone=>t_value,
+           end of t_cntry_reg_time_zone,
+           t_cntry_reg_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_reg_time_zone with unique key key.
+
+    types: begin of t_cntry_zip_key,
+             country type land1,
+             zip_code type tznzipgene,
+           end of t_cntry_zip_key,
+           begin of t_cntry_zip_time_zone,
+             key type zcl_time_zone_factory=>t_cntry_zip_key,
+             value type zif_time_zone=>t_value,
+           end of t_cntry_zip_time_zone,
+           t_cntry_zip_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_zip_time_zone with unique key key.
+
+    types: begin of t_user_time_zone,
+             key type uname,
+             value type zif_time_zone=>t_value,
+           end of t_user_time_zone,
+           t_user_time_zone_map type hashed table of zcl_time_zone_factory=>t_user_time_zone with unique key key.
+
+    methods from_tz_map_or_lazy_initalz
+              importing
+                i_key type zif_time_zone=>t_value
+              returning
+                value(r_time_zone) type ref to zif_time_zone
+              raising
+                zcx_time_zone.
+
+    class-data a_lazy_time_zone_map type zcl_time_zone_factory=>t_time_zone_map.
+
+    class-data a_lazy_country_time_zone_map type zcl_time_zone_factory=>t_country_time_zone_map.
+
+    class-data a_lazy_cntry_reg_time_zone_map type zcl_time_zone_factory=>t_cntry_reg_time_zone_map.
+
+    class-data a_lazy_cntry_zip_time_zone_map type zcl_time_zone_factory=>t_cntry_zip_time_zone_map.
+
+    class-data a_lazy_user_time_zone_map type zcl_time_zone_factory=>t_user_time_zone_map.
+
+    class-data a_system_time_zone_code type zif_time_zone=>t_value.
 
 endclass.
 
@@ -31,40 +89,84 @@ class zcl_time_zone_factory implementation.
   endmethod.
   method zif_time_zone_factory~from_country.
 
-    select tzone as id
-      from ttz5
-      where land1 eq @i_country
-      into table @data(time_zones).
+    try.
 
-    r_country_time_zone = cond #( when lines( time_zones ) eq 1
-                                  then new zcl_time_zone( time_zones[ 1 ]-id )->check( )
-                                  else throw zcx_time_zone( ) ).
+      r_country_time_zone = zcl_time_zone_factory=>a_lazy_time_zone_map[ key = zcl_time_zone_factory=>a_lazy_country_time_zone_map[ key = i_country ]-value ]-value.
+
+    catch cx_sy_itab_line_not_found.
+
+      select tzone as id
+        from ttz5
+        where land1 eq @i_country
+        into table @data(time_zones).
+
+      if lines( time_zones ) eq 1.
+
+        r_country_time_zone = me->from_tz_map_or_lazy_initalz( value #( time_zones[ 1 ]-id ) ).
+
+      else.
+
+        raise exception type zcx_time_zone.
+
+      endif.
+
+    endtry.
 
   endmethod.
   method zif_time_zone_factory~from_country_and_region.
 
-    select tzone as id
-      from ttz5s
-      where land1 eq @i_country
-            and bland eq @i_region
-      into table @data(time_zones).
+    try.
 
-    r_region_time_zone = cond #( when lines( time_zones ) eq 1
-                                 then new zcl_time_zone( time_zones[ 1 ]-id )->check( )
-                                 else throw zcx_time_zone( ) ).
+      r_region_time_zone = zcl_time_zone_factory=>a_lazy_time_zone_map[ key = zcl_time_zone_factory=>a_lazy_cntry_reg_time_zone_map[ key = value #( country = i_country
+                                                                                                                                                    region = i_region ) ]-value ]-value.
+
+    catch cx_sy_itab_line_not_found.
+
+      select tzone as id
+        from ttz5s
+        where land1 eq @i_country
+              and bland eq @i_region
+        into table @data(time_zones).
+
+      if lines( time_zones ) eq 1.
+
+        r_region_time_zone = me->from_tz_map_or_lazy_initalz( value #( time_zones[ 1 ]-id ) ).
+
+      else.
+
+        raise exception type zcx_time_zone.
+
+      endif.
+
+    endtry.
 
   endmethod.
   method zif_time_zone_factory~from_country_and_zip_code.
 
-    select single tzone
-      from ttz5z
-      where land1 eq @i_country
-            and zipgene eq @i_zip_code
-      into @data(time_zone).
+    try.
 
-    r_zip_code_time_zone = cond #( when time_zone is not initial
-                                   then new zcl_time_zone( time_zone )->check( )
-                                   else throw zcx_time_zone( ) ).
+      r_zip_code_time_zone = zcl_time_zone_factory=>a_lazy_time_zone_map[ key = zcl_time_zone_factory=>a_lazy_cntry_zip_time_zone_map[ key = value #( country = i_country
+                                                                                                                                                      zip_code = i_zip_code ) ]-value ]-value.
+
+    catch cx_sy_itab_line_not_found.
+
+      select single tzone
+        from ttz5z
+        where land1 eq @i_country
+              and zipgene eq @i_zip_code
+        into @data(time_zone).
+
+      if time_zone is not initial.
+
+        r_zip_code_time_zone = me->from_tz_map_or_lazy_initalz( time_zone ).
+
+      else.
+
+        raise exception type zcx_time_zone.
+
+      endif.
+
+    endtry.
 
   endmethod.
   method zif_time_zone_factory~from_current_user.
@@ -74,43 +176,100 @@ class zcl_time_zone_factory implementation.
   endmethod.
   method zif_time_zone_factory~from_user.
 
-    data(logondata) = value uslogond( ).
+    try.
 
-    call function 'SUSR_USER_LOGONDATA_GET'
-      exporting
-        user_name           = i_user
-      importing
-        user_logondata      = logondata
-      exceptions
-        user_name_not_exist = 1
-        others              = 0.
+      r_user_time_zone = zcl_time_zone_factory=>a_lazy_time_zone_map[ key = zcl_time_zone_factory=>a_lazy_user_time_zone_map[ key = i_user ]-value ]-value.
 
-    r_user_time_zone = switch #( sy-subrc
-                                 when 0
-                                 then cond #( when logondata-tzone is not initial
-                                              then new zcl_time_zone( logondata-tzone )->check( )
-                                              else me->from_system( ) )
-                                 else throw zcx_time_zone( ) ).
+    catch cx_sy_itab_line_not_found.
+
+      data(logondata) = value uslogond( ).
+
+      call function 'SUSR_USER_LOGONDATA_GET'
+        exporting
+          user_name           = i_user
+        importing
+          user_logondata      = logondata
+        exceptions
+          user_name_not_exist = 1
+          others              = 0.
+
+      if sy-subrc eq 0.
+
+        r_user_time_zone = cond #( when logondata-tzone is not initial
+                                   then me->from_tz_map_or_lazy_initalz( logondata-tzone )
+                                   else me->from_system( ) ).
+
+      else.
+
+        raise exception type zcx_time_zone.
+
+      endif.
+
+    endtry.
 
   endmethod.
   method zif_time_zone_factory~utc.
 
-    r_utc_time_zone = new zcl_time_zone( 'UTC' )->check( ).
+    r_utc_time_zone = me->from_tz_map_or_lazy_initalz( 'UTC' ).
 
   endmethod.
-  method zif_time_zone_factory~from_system.
+  method zif_time_zone_factory~system.
 
-    data(system_timezone) = value tznzone( ).
+    if zcl_time_zone_factory=>a_system_time_zone_code is not initial.
 
-    call function 'GET_SYSTEM_TIMEZONE'
-      importing
-        timezone = system_timezone
-      exceptions
-        others   = 0.
+      r_system_time_zone = me->from_tz_map_or_lazy_initalz( zcl_time_zone_factory=>a_system_time_zone_code ).
 
-    r_system_time_zone = cond #( when system_timezone is not initial
-                                 then new zcl_time_zone( system_timezone )->check( )
-                                 else throw zcx_time_zone( ) ).
+    else.
+
+      call function 'GET_SYSTEM_TIMEZONE'
+        importing
+          timezone = zcl_time_zone_factory=>a_system_time_zone_code
+        exceptions
+          others   = 0.
+
+      if zcl_time_zone_factory=>a_system_time_zone_code is not initial.
+
+        r_system_time_zone = me->from_tz_map_or_lazy_initalz( zcl_time_zone_factory=>a_system_time_zone_code ).
+
+      else.
+
+        raise exception type zcx_time_zone. " ! change to 'throw shortdump zcx_time_zone' if version allows
+
+      endif.
+
+    endif.
+
+  endmethod.
+  method zif_time_zone_factory~from_user_or_fallback.
+
+    try.
+
+      r_user_time_zone = me->from_user( i_user ).
+
+    catch zcx_time_zone.
+
+      r_user_time_zone = i_fallback.
+
+    endtry.
+
+  endmethod.
+  method from_tz_map_or_lazy_initalz.
+
+    try.
+
+      r_time_zone = zcl_time_zone_factory=>a_lazy_time_zone_map[ key = i_key ]-value.
+
+    catch cx_sy_itab_line_not_found.
+
+      data(tz) = new zcl_time_zone( i_key )->check( ).
+
+      zcl_time_zone_factory=>a_lazy_time_zone_map = value #( base zcl_time_zone_factory=>a_lazy_time_zone_map
+                                                             ( value #( key = i_key
+                                                                        value = tz ) ) ).
+
+      r_time_zone = tz.
+
+    endtry.
 
   endmethod.
 

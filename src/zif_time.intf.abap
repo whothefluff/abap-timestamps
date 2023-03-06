@@ -41,8 +41,7 @@ interface zif_time public.
             returning
               value(r_formatted_time) type string
             raising
-              zcx_time
-              zcx_time_format.
+              zcx_time.
 
   methods to_format_iso_8601
             returning
@@ -64,8 +63,7 @@ interface zif_time public.
             returning
               value(r_formatted_time) type string
             raising
-              zcx_time
-              zcx_time_format.
+              zcx_time.
 
   methods to_format_of_country
             importing

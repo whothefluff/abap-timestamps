@@ -27,12 +27,22 @@
      <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>FROM_DEFAULT_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>FROM_SYSTEM_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
     </SEOCOMPOTX>

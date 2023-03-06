@@ -6,13 +6,13 @@ interface zif_time_zone_factory public.
 
   methods utc
             returning
-              value(r_utc_time_zone) type ref to zif_time_zone.
-
-  methods from_system
-            returning
-              value(r_system_time_zone) type ref to zif_time_zone
+              value(r_utc_time_zone) type ref to zif_time_zone
             raising
               zcx_time_zone.
+
+  methods system
+            returning
+              value(r_system_time_zone) type ref to zif_time_zone.
 
   methods from_country
             importing
@@ -47,6 +47,13 @@ interface zif_time_zone_factory public.
               value(r_user_time_zone) type ref to zif_time_zone
             raising
               zcx_time_zone.
+
+  methods from_user_or_fallback
+            importing
+              i_user type uname
+              i_fallback type ref to zif_time_zone
+            returning
+              value(r_user_time_zone) type ref to zif_time_zone.
 
   methods from_current_user
             returning

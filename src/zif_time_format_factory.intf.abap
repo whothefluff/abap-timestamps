@@ -40,7 +40,9 @@ interface zif_time_format_factory public.
 
   methods iso_8601
             returning
-              value(r_iso_8601_time_format) type ref to zif_time_format.
+              value(r_iso_8601_time_format) type ref to zif_time_format
+            raising
+              zcx_time_format.
 
   methods _0_to_11_upper
             returning

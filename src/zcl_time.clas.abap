@@ -85,10 +85,13 @@ class zcl_time implementation.
 
     data(provided_format) = i_format->valid_value_or_error( ).
 
-    select single land
+    select land
       from t005x
       where timefm eq @provided_format
-      into @data(country_with_provided_format).
+      order by primary key
+      into @data(country_with_provided_format) up to 1 rows.
+
+    endselect.
 
     r_formatted_time = cond #( when country_with_provided_format is not initial
                                then |{ me->valid_value_or_error( ) country = country_with_provided_format }|

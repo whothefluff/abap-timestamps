@@ -10,7 +10,7 @@ interface zif_date_factory public.
               zcx_timestamp
               zcx_time_zone.
 
-  methods from_timestamp_to_system_tz
+  methods from_timestamp_to_utc_tz
             importing
               i_timestamp type ref to zif_timestamp
             returning
@@ -18,6 +18,22 @@ interface zif_date_factory public.
             raising
               zcx_timestamp
               zcx_time_zone.
+
+  methods from_timestamp_to_default_tz
+            importing
+              i_timestamp type ref to zif_timestamp
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_timestamp.
+
+  methods from_timestamp_to_system_tz
+            importing
+              i_timestamp type ref to zif_timestamp
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_timestamp.
 
   methods from_timestamp_to_user_tz
             importing
@@ -35,8 +51,7 @@ interface zif_date_factory public.
             returning
               value(r_date) type ref to zif_date
             raising
-              zcx_timestamp
-              zcx_time_zone.
+              zcx_timestamp.
 
   methods from_timestamp_to_country_tz
             importing
@@ -86,8 +101,7 @@ interface zif_date_factory public.
             returning
               value(r_date) type ref to zif_date
             raising
-              zcx_date
-              zcx_date_format.
+              zcx_date.
 
   methods from_iso_8601_formatted
             importing
@@ -114,8 +128,7 @@ interface zif_date_factory public.
             returning
               value(r_date) type ref to zif_date
             raising
-              zcx_date
-              zcx_date_format.
+              zcx_date.
 
   methods from_country_formatted
             importing

@@ -40,7 +40,9 @@ interface zif_date_format_factory public.
 
   methods iso_8601
             returning
-              value(r_iso_8601_date_format) type ref to zif_date_format.
+              value(r_iso_8601_date_format) type ref to zif_date_format
+            raising
+              zcx_date_format.
 
   methods ddmmyyyy
             returning

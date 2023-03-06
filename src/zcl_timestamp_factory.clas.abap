@@ -16,11 +16,17 @@ class zcl_timestamp_factory definition
              from_country_and_zip_code_tz for zif_timestamp_factory~from_country_and_zip_code_tz,
              from_country_tz for zif_timestamp_factory~from_country_tz.
 
-    methods constructor.
+    methods constructor
+              importing
+                i_time_zone_factory type ref to zif_time_zone_factory optional.
+
+    class-methods class_constructor.
 
   protected section.
 
-    data a_time_zone_factory type ref to zcl_time_zone_factory.
+    data a_time_zone_factory type ref to zif_time_zone_factory.
+
+    class-data a_default_time_zone_factory type ref to zif_time_zone_factory.
 
 endclass.
 
@@ -28,9 +34,16 @@ endclass.
 
 class zcl_timestamp_factory implementation.
 
+  method class_constructor.
+
+    zcl_timestamp_factory=>a_default_time_zone_factory = new zcl_time_zone_factory( ).
+
+  endmethod.
   method constructor.
 
-    me->a_time_zone_factory = new zcl_time_zone_factory( ).
+    me->a_time_zone_factory = cond #( when i_time_zone_factory is supplied
+                                      then i_time_zone_factory
+                                      else zcl_timestamp_factory=>a_default_time_zone_factory ).
 
   endmethod.
   method zif_timestamp_factory~current.
@@ -43,20 +56,20 @@ class zcl_timestamp_factory implementation.
 
   endmethod.
   method zif_timestamp_factory~from.
-
-    convert date i_date
-            time i_time
+    "no need to use 'valid_value_or_error' since this statement checks anyway
+    convert date i_date->value( )
+            time i_time->value( )
             into time stamp data(ts)
-            time zone i_timezone->valid_value_or_error( ).
+            time zone i_timezone->value( ).
 
     r_timestamp = switch #( sy-subrc
                             when 0
                             then new zcl_timestamp( conv #( ts ) )
                             when 4
-                            then throw zcx_timestamp( new zcl_text_symbol_msg( 'The specified time was converted to a time stamp without time shift'(001) ) )
+                            then throw zcx_time_zone( new zcl_text_symbol_msg( 'The specified time was converted to a time stamp without time shift'(001) ) )
                             when 8
-                            then throw zcx_timestamp( new zcl_text_symbol_msg( 'The specified time could not be converted because the specified time zone does not exist in the DDIC database table TTZZ'(002) ) )
-                            when 12
+                            then throw zcx_time_zone( new zcl_text_symbol_msg( 'The specified time could not be converted because the specified time zone does not exist in the DDIC database table TTZZ'(002) ) )
+                            when 12 "#EC NUMBER_OK
                             then throw zcx_timestamp( new zcl_text_symbol_msg( 'The specified time could not be converted because it contains invalid or inconsistent values'(003) ) )
                             else throw zcx_timestamp( ) ).
 
@@ -65,7 +78,7 @@ class zcl_timestamp_factory implementation.
 
     r_timestamp = me->from( i_date = i_date
                             i_time = i_time
-                            i_timezone = a_time_zone_factory->from_system( ) ).
+                            i_timezone = a_time_zone_factory->system( ) ).
 
   endmethod.
   method zif_timestamp_factory~from_user_tz.
@@ -103,6 +116,20 @@ class zcl_timestamp_factory implementation.
     r_timestamp = me->from( i_date = i_date
                             i_time = i_time
                             i_timezone = me->a_time_zone_factory->from_country( i_country ) ).
+
+  endmethod.
+  method zif_timestamp_factory~from_default_tz.
+
+    r_timestamp = me->from( i_date = i_date
+                            i_time = i_time
+                            i_timezone = me->a_time_zone_factory->default( ) ).
+
+  endmethod.
+  method zif_timestamp_factory~from_utc_tz.
+
+    r_timestamp = me->from( i_date = i_date
+                            i_time = i_time
+                            i_timezone = me->a_time_zone_factory->utc( ) ).
 
   endmethod.
 

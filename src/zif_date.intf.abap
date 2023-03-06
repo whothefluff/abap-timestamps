@@ -41,8 +41,7 @@ interface zif_date public.
             returning
               value(r_formatted_date) type string
             raising
-              zcx_date
-              zcx_date_format.
+              zcx_date.
 
   methods to_format_iso_8601
             returning
@@ -64,8 +63,7 @@ interface zif_date public.
             returning
               value(r_formatted_date) type string
             raising
-              zcx_date
-              zcx_date_format.
+              zcx_date.
 
   methods to_format_of_country
             importing
