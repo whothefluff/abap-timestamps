@@ -10,6 +10,53 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DEFAULT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the default time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of a country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_AND_REGION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of a country and region</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_AND_ZIP_CODE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of a country and ZIP code</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of a user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the time zone of a user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SYSTEM</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the system time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UTC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the UTC time zone</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

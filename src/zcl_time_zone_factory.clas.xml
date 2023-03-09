@@ -11,6 +11,43 @@
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_CNTRY_REG_TIME_ZONE_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between locations and time zones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_CNTRY_ZIP_TIME_ZONE_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between locations and time zones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_COUNTRY_TIME_ZONE_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between countries and time zones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_TIME_ZONE_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the initialized time zones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_USER_TIME_ZONE_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between users and time zones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_SYSTEM_TIME_ZONE_CODE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Code for the time zone of the system</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TZ_MAP_OR_LAZY_INITALZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns a time zone using a key</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

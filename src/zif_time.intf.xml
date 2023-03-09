@@ -10,6 +10,161 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Throws an error if this time is not valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_VALID</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this time is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the specified format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_0_TO_11_LOWER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the 12-hour format hh:mm:ss am/pm</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_0_TO_11_UPPER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the 12-hour format hh:mm:ss AM/PM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_1_TO_12_LOWER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the 12-hour format hh:mm:ss am/pm</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_1_TO_12_UPPER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the 12-hour format hh:mm:ss AM/PM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_24H</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the 24-hour form hh:mm:ss</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_DEFAULT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the ISO 8601 format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the format of the specified country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the format of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this time in the format of the specified user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_ERROR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this time if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this time if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this time as is</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_0_TO_11_LOWER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_0_TO_11_UPPER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_1_TO_12_LOWER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_1_TO_12_UPPER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_24H</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_DEFAULT</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_COUNTRY</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_CURRENT_USER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_USER</CMPNAME>
+     <SCONAME>R_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Date factory</p>
 class zcl_date_factory definition
                        public
                        create public.
@@ -34,21 +35,30 @@ class zcl_date_factory definition
              from_timestamp_to_system_tz for zif_date_factory~from_timestamp_to_system_tz,
              from_timestamp_to_user_tz for zif_date_factory~from_timestamp_to_user_tz.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a date factory</p>
+    "!
+    "! @parameter i_format_factory | <p class="shorttext synchronized" lang="EN">Default format factory replacement</p>
+    "! @parameter i_time_zone_factory | <p class="shorttext synchronized" lang="EN">Default time zone factory replacement</p>
     methods constructor
               importing
                 i_format_factory type ref to zif_date_format_factory optional
                 i_time_zone_factory type ref to zif_time_zone_factory optional.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates the default factories</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The format factory used for conversions</p>
     data a_format_factory type ref to zif_date_format_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">The time zone factory used for conversions</p>
     data a_time_zone_factory type ref to zif_time_zone_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Format factory when none is provided</p>
     class-data a_default_format_factory type ref to zif_date_format_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Time zone factory when none is provided</p>
     class-data a_default_time_zone_factory type ref to zif_time_zone_factory.
 
 endclass.
@@ -77,7 +87,7 @@ class zcl_date_factory implementation.
   endmethod.
   method zif_date_factory~from_country_formatted.
 
-    r_date = me->from_formatted( i_date = i_date
+    r_date = me->from_formatted( i_date = i_formatted_date
                                  i_format = me->a_format_factory->from_country( i_country ) ).
 
   endmethod.
@@ -182,7 +192,7 @@ class zcl_date_factory implementation.
   endmethod.
   method zif_date_factory~from_user_formatted.
 
-    r_date = me->from_formatted( i_date = i_date
+    r_date = me->from_formatted( i_date = i_formatted_date
                                  i_format = me->a_format_factory->from_user( i_user ) ).
 
   endmethod.

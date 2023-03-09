@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Time zone</p>
 class zcl_time_zone definition
                     public
                     create public.
@@ -12,12 +13,16 @@ class zcl_time_zone definition
              valid_value_or_fallback for zif_time_zone~valid_value_or_fallback,
              value for zif_time_zone~value.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a time zone with the provided value</p>
+    "!
+    "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
     methods constructor
               importing
                 i_value type zif_time_zone=>t_value.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this time zone object</p>
     data a_value type zif_time_zone=>t_value.
 
 endclass.

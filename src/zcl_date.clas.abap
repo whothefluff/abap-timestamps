@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Date</p>
 class zcl_date definition
                public
                create public.
@@ -30,19 +31,27 @@ class zcl_date definition
              to_format_default for zif_date~to_format_default,
              value for zif_date~value.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a date with the provided value</p>
+    "!
+    "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
+    "! @parameter i_format_factory | <p class="shorttext synchronized" lang="EN">Default format factory replacement</p>
     methods constructor
               importing
                 i_value type zif_date=>t_value
                 i_format_factory type ref to zif_date_format_factory optional.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates the default format factory</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this date object</p>
     data a_value type zif_date=>t_value.
 
+    "! <p class="shorttext synchronized" lang="EN">The format factory used for conversions</p>
     data a_format_factory type ref to zif_date_format_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Format factory when none is provided</p>
     class-data a_default_format_factory type ref to zif_date_format_factory.
 
 endclass.

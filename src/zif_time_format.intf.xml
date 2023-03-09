@@ -10,6 +10,53 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Throws an error if this format is not valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELIMITER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the delimiter characters of this format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESCRIBER_IN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns a pattern for this format in the provided language</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_VALID</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this format is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOCALIZED_DESCRIBER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns a pattern for this format in the current language</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal code</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_ERROR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this format if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this format if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this format as is</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

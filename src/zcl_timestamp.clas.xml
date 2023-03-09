@@ -13,11 +13,61 @@
    </VSEOCLASS>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>A_DATE_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The date format factory used for conversions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_DEFAULT_DATE_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date format factory when none is provided</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_DEFAULT_TIME_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time format factory when none is provided</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_TIME_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The time format factory used for conversions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The actual value of this time stamp object</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instantiates the default format factories</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a new timestamp with the provided value</DESCRIPT>
+     <DESCRIPT>Instantiates a time stamp with the provided value</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_DATE_FACTORY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default date format factory replacement</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_TIME_FACTORY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default time format factory replacement</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_VALUE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>A value (validity not checked)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

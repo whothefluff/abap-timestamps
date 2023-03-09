@@ -5,7 +5,7 @@
    <VSEOINTERF>
     <CLSNAME>ZIF_TIMESTAMP</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>A timestamp of type p in form yyyymmddhhmmss.sssssss</DESCRIPT>
+    <DESCRIPT>A time stamp of type p in form yyyymmddhhmmss.sssssss</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
@@ -14,122 +14,162 @@
     <SEOCOMPOTX>
      <CMPNAME>ADD</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Adds the values passed to the optional parameters</DESCRIPT>
+     <DESCRIPT>Adds values of provided arguments to this time stamp</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CHECK</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Throws error if value is not valid</DESCRIPT>
+     <DESCRIPT>Throws an error if this time stamp is not valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_DAYLIGHT_SAVING_TIME</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>When value and timezone are valid, returns whether the time</DESCRIPT>
+     <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt;when this time stamp is in summer time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_VALID</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Returns true if valid</DESCRIPT>
+     <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this time stamp is valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SECONDS_OF_DIFFERENCE_WITH</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Returns the time difference between itself and the provided</DESCRIPT>
+     <DESCRIPT>Returns time difference between this time stamp and other</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SHORT_VALUE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts the value as is to short and returns it</DESCRIPT>
+     <DESCRIPT>Returns this value as is without milliseconds</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SUBTRACT</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Subtracts the values passed to the optional parameters</DESCRIPT>
+     <DESCRIPT>Subtracts values of provided arguments to this time stamp</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_DEFAULT_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_SYSTEM_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value is valid</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_TZ_OF_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_TZ_OF_CTRY_REGION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_DATE_FOR_TZ_OF_CTRY_ZIP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_TZ_OF_CURRENT_USER</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_TZ_OF_USER</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_DATE_FOR_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME_FOR_DEFAULT_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME_FOR_SYSTEM_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to time and returns it if value is valid</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_TZ_OF_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_TZ_OF_CTRY_REGION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_TIME_FOR_TZ_OF_CTRY_ZIP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME_FOR_TZ_OF_CURRENT_USER</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME_FOR_TZ_OF_USER</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to date and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME_FOR_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Converts it to time and returns it if value and timezone are</DESCRIPT>
+     <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_SHORT_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal type without milliseconds</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal type</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALID_SHORT_VALUE_OR_ERROR</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>If valid, convert to short and return. Otherwise error</DESCRIPT>
+     <DESCRIPT>Returns the short value of this time stamp if it&apos;s valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALID_SHORT_VALUE_OR_FALLBACK</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>If valid, convert to short and return. Otherwise fallback</DESCRIPT>
+     <DESCRIPT>Returns the short value of this time stamp if it&apos;s valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALID_VALUE_OR_ERROR</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Returns the value if its valid, an error otherwise</DESCRIPT>
+     <DESCRIPT>Returns the value of this time stamp if it&apos;s valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALID_VALUE_OR_FALLBACK</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Returns the value if its valid, a fallback value otherwise</DESCRIPT>
+     <DESCRIPT>Returns the value of this time stamp if it&apos;s valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALUE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Returns the value as is</DESCRIPT>
+     <DESCRIPT>Returns the value of this time stamp as is</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
   </asx:values>

@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Time</p>
 class zcl_time definition
                public
                create public.
@@ -23,19 +24,27 @@ class zcl_time definition
              valid_value_or_fallback for zif_time~valid_value_or_fallback,
              value for zif_time~value.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a time with the provided value</p>
+    "!
+    "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
+    "! @parameter i_format_factory | <p class="shorttext synchronized" lang="EN">Default format factory replacement</p>
     methods constructor
               importing
                 i_value type zif_time=>t_value
                 i_format_factory type ref to zif_time_format_factory optional.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates the default format factory</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this time object</p>
     data a_value type zif_time=>t_value.
 
+    "! <p class="shorttext synchronized" lang="EN">The format factory used for conversions</p>
     data a_format_factory type ref to zif_time_format_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Format factory when none is provided</p>
     class-data a_default_format_factory type ref to zif_time_format_factory.
 
 endclass.

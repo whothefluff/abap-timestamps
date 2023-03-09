@@ -38,27 +38,35 @@ class zcl_timestamp definition
              to_time_for_tz_of_current_user for zif_timestamp~to_time_for_tz_of_current_user,
              to_time_for_tz_of_user for zif_timestamp~to_time_for_tz_of_user.
 
-    "! <p class="shorttext synchronized" lang="EN">Creates a new timestamp with the provided value</p>
-    "! Allows invalid values
-    "! @parameter i_value |
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a time stamp with the provided value</p>
+    "!
+    "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
+    "! @parameter i_date_factory | <p class="shorttext synchronized" lang="EN">Default date format factory replacement</p>
+    "! @parameter i_time_factory | <p class="shorttext synchronized" lang="EN">Default time format factory replacement</p>
     methods constructor
               importing
                 i_value type zif_timestamp=>t_value
                 i_date_factory type ref to zif_date_factory optional
                 i_time_factory type ref to zif_time_factory optional.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates the default format factories</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this time stamp object</p>
     data a_value type zif_timestamp=>t_value.
 
+    "! <p class="shorttext synchronized" lang="EN">The date format factory used for conversions</p>
     data a_date_factory type ref to zif_date_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">The time format factory used for conversions</p>
     data a_time_factory type ref to zif_time_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Date format factory when none is provided</p>
     class-data a_default_date_factory type ref to zif_date_factory.
 
+    "! <p class="shorttext synchronized" lang="EN">Time format factory when none is provided</p>
     class-data a_default_time_factory type ref to zif_time_factory.
 
 endclass.

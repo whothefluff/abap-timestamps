@@ -10,6 +10,103 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DDMMYYYY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format DD.MM.YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEFAULT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IRANIAN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Iranian Date YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ISLAMIC1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Islamic Date 1 YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ISLAMIC2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Islamic Date 2 YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ISO_8601</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the ISO 8601 format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>JAPANESE1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Japanese Date GYY.MM.DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>JAPANESE2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Japanese Date GYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>JAPANESE3</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format Japanese Date GYY-MM-DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MMDDYYYY1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format MM/DD/YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MMDDYYYY2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format MM-DD-YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>YYYYMMDD1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format YYYY.MM.DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>YYYYMMDD2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>YYYYMMDD3</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format YYYY-MM-DD</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

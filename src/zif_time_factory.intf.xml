@@ -10,6 +10,176 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_0_TO_11_LOWER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a 12h time string &apos;hh:mm:ss am/pm&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_0_TO_11_UPPER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a 12h time string &apos;hh:mm:ss AM/PM&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_1_TO_12_LOWER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a 12h time string &apos;hh:mm:ss am/pm&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_1_TO_12_UPPER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a 12h time string &apos;hh:mm:ss AM/PM&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_24H_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a 24h time string &apos;hh:mm:ss&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a string and a country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time string of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_DEFAULT_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time string in the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time string in specified format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_ISO_8601_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time string in ISO format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to a time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_COUNTRY_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CTRY_REGN_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CTRY_ZIP_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CURR_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to the user time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_DEFAULT_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to the default tz</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_SYSTEM_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to the system time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to a user time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_UTC_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time stamp to UTC time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new time from a time string and a user</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_0_TO_11_LOWER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_0_TO_11_UPPER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_1_TO_12_LOWER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_1_TO_12_UPPER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_24H_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_COUNTRY_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_CURRENT_USER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_DEFAULT_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_FORMATTED</CMPNAME>
+     <SCONAME>I_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_ISO_8601_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_USER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_TIME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a time in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

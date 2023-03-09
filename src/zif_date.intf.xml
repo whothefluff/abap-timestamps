@@ -10,6 +10,238 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Throws an error if this date is not valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_VALID</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this date is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the specified format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_DDMMYYYY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form DD.MM.YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_DEFAULT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_IRANIAN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as an Iranian date of form YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_ISLAMIC1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as an Islamic date of form YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_ISLAMIC2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as an Islamic date of form YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the ISO 8601 format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as a Japanese date of form GYY.MM.DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as a Japanese date of form GYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE3</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date as a Japanese date of form GYY-MM-DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_MMDDYYYY1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form MM/DD/YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_MMDDYYYY2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form MM-DD-YYYY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the format of the specified country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the format of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_OF_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the format of the specified user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD1</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form YYYY.MM.DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD2</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form YYYY/MM/DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD3</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns this date in the form YYYY-MM-DD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_ERROR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this date if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALID_VALUE_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this date if it&apos;s valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the value of this date as is</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_DDMMYYYY</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_DEFAULT</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_IRANIAN</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_ISLAMIC1</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_ISLAMIC2</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE1</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE2</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_JAPANESE3</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_MMDDYYYY1</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_MMDDYYYY2</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_COUNTRY</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_CURRENT_USER</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_OF_USER</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD1</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD2</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TO_FORMAT_YYYYMMDD3</CMPNAME>
+     <SCONAME>R_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date as string with external format</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

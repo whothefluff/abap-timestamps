@@ -10,6 +10,68 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DEFAULT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a country according to master data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a country according to master data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of the current user (master data)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a user according to master data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_OR_FALLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the format of a user according to master data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ISO_8601</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the ISO 8601 format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_0_TO_11_LOWER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the 0 to 11 12-hour format hh:mm:ss am / hh:mm:ss pm</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_0_TO_11_UPPER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the 0 to 11 12-hour format hh:mm:ss AM / hh:mm:ss PM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_1_TO_12_LOWER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the 1 to 12 12-hour format hh:mm:ss am / hh:mm:ss pm</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_1_TO_12_UPPER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the 1 to 12 12-hour format hh:mm:ss AM / hh:mm:ss PM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_24H</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the 24-hour format hh:mm:ss</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

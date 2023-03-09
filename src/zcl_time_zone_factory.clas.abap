@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Time zone factory</p>
 class zcl_time_zone_factory definition
                             public
                             create public.
@@ -18,44 +19,63 @@ class zcl_time_zone_factory definition
 
   protected section.
 
-    types: begin of t_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_time_zone,
              key type zif_time_zone=>t_value,
              value type ref to zif_time_zone,
-           end of t_format,
-           t_time_zone_map type hashed table of zcl_time_zone_factory=>t_format with unique key key.
+           end of t_time_zone,
+           "! <p class="shorttext synchronized" lang="EN"></p>
+           t_time_zone_map type hashed table of zcl_time_zone_factory=>t_time_zone with unique key key.
 
-    types: begin of t_country_time_zone,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_country_time_zone,
              key type land1,
              value type zif_time_zone=>t_value,
            end of t_country_time_zone,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_time_zone_map type hashed table of zcl_time_zone_factory=>t_country_time_zone with unique key key.
 
-    types: begin of t_cntry_reg_key,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_cntry_reg_key,
              country type land1,
              region type regio,
            end of t_cntry_reg_key,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_cntry_reg_time_zone,
              key type zcl_time_zone_factory=>t_cntry_reg_key,
              value type zif_time_zone=>t_value,
            end of t_cntry_reg_time_zone,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_cntry_reg_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_reg_time_zone with unique key key.
 
-    types: begin of t_cntry_zip_key,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_cntry_zip_key,
              country type land1,
              zip_code type tznzipgene,
            end of t_cntry_zip_key,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_cntry_zip_time_zone,
              key type zcl_time_zone_factory=>t_cntry_zip_key,
              value type zif_time_zone=>t_value,
            end of t_cntry_zip_time_zone,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_cntry_zip_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_zip_time_zone with unique key key.
 
-    types: begin of t_user_time_zone,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_user_time_zone,
              key type uname,
              value type zif_time_zone=>t_value,
            end of t_user_time_zone,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_user_time_zone_map type hashed table of zcl_time_zone_factory=>t_user_time_zone with unique key key.
 
+    "! <p class="shorttext synchronized" lang="EN">Returns a time zone using a key</p>
+    "! If the key is found in the hash-map, return the existing instance.
+    "! If the key is not found, create a new instance, add it to the hash-map, and return it.
+    "!
+    "! @parameter i_key | <p class="shorttext synchronized" lang="EN"></p>
+    "! @parameter r_time_zone | <p class="shorttext synchronized" lang="EN"></p>
+    "! @raising zcx_time_zone | <p class="shorttext synchronized" lang="EN"></p>
     methods from_tz_map_or_lazy_initalz
               importing
                 i_key type zif_time_zone=>t_value
@@ -64,16 +84,22 @@ class zcl_time_zone_factory definition
               raising
                 zcx_time_zone.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the initialized time zones</p>
     class-data a_lazy_time_zone_map type zcl_time_zone_factory=>t_time_zone_map.
 
-    class-data a_lazy_country_time_zone_map type zcl_time_zone_factory=>t_country_time_zone_map.
-
-    class-data a_lazy_cntry_reg_time_zone_map type zcl_time_zone_factory=>t_cntry_reg_time_zone_map.
-
-    class-data a_lazy_cntry_zip_time_zone_map type zcl_time_zone_factory=>t_cntry_zip_time_zone_map.
-
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between users and time zones</p>
     class-data a_lazy_user_time_zone_map type zcl_time_zone_factory=>t_user_time_zone_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between countries and time zones</p>
+    class-data a_lazy_country_time_zone_map type zcl_time_zone_factory=>t_country_time_zone_map.
+
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between locations and time zones</p>
+    class-data a_lazy_cntry_reg_time_zone_map type zcl_time_zone_factory=>t_cntry_reg_time_zone_map.
+
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between locations and time zones</p>
+    class-data a_lazy_cntry_zip_time_zone_map type zcl_time_zone_factory=>t_cntry_zip_time_zone_map.
+
+    "! <p class="shorttext synchronized" lang="EN">Code for the time zone of the system</p>
     class-data a_system_time_zone_code type zif_time_zone=>t_value.
 
 endclass.

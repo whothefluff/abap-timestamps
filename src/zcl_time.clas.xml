@@ -11,6 +11,47 @@
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>A_DEFAULT_FORMAT_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Format factory when none is provided</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_FORMAT_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The format factory used for conversions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The actual value of this time object</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instantiates the default format factory</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instantiates a time with the provided value</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_FORMAT_FACTORY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default format factory replacement</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_VALUE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>A value (validity not checked)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

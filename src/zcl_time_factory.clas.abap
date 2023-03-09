@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Time factory</p>
 class zcl_time_factory definition
                        public
                        create public.
@@ -27,17 +28,23 @@ class zcl_time_factory definition
              from_timestamp_to_user_tz for zif_time_factory~from_timestamp_to_user_tz,
              from_user_formatted for zif_time_factory~from_user_formatted.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a time factory</p>
+    "!
+    "! @parameter i_time_zone_factory | <p class="shorttext synchronized" lang="EN">Default time zone factory replacement</p>
     methods constructor
               importing
                 i_time_zone_factory type ref to zif_time_zone_factory optional.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates the default time zone factory</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The time zone factory used for conversions</p>
     data a_time_zone_factory type ref to zif_time_zone_factory.
 
-    class-data a_default_format_factory type ref to zif_time_zone_factory.
+    "! <p class="shorttext synchronized" lang="EN">Time zone factory when none is provided</p>
+    class-data a_default_time_zone_factory type ref to zif_time_zone_factory.
 
 endclass.
 
@@ -47,14 +54,14 @@ class zcl_time_factory implementation.
 
   method class_constructor.
 
-    zcl_time_factory=>a_default_format_factory = new zcl_time_zone_factory( ).
+    zcl_time_factory=>a_default_time_zone_factory = new zcl_time_zone_factory( ).
 
   endmethod.
   method constructor.
 
     me->a_time_zone_factory = cond #( when i_time_zone_factory is supplied
                                       then i_time_zone_factory
-                                      else zcl_time_factory=>a_default_format_factory ).
+                                      else zcl_time_factory=>a_default_time_zone_factory ).
 
   endmethod.
   method zif_time_factory~from_0_to_11_upper_formatted.
@@ -89,7 +96,7 @@ class zcl_time_factory implementation.
   endmethod.
   method zif_time_factory~from_country_formatted.
 
-    r_time = me->from_formatted( i_time = i_time
+    r_time = me->from_formatted( i_time = i_formatted_time
                                  i_format = value #( ) ).
 
   endmethod.
@@ -139,7 +146,7 @@ class zcl_time_factory implementation.
                        when 8
                        then throw zcx_time_zone( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
                        when 12 "#EC NUMBER_OK
-                       then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
+                       then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid time when combined with the time zone'(003) ) )
                        else throw zcx_timestamp( ) ).
 
   endmethod.
@@ -183,7 +190,7 @@ class zcl_time_factory implementation.
   endmethod.
   method zif_time_factory~from_user_formatted.
 
-    r_time = me->from_formatted( i_time = i_time
+    r_time = me->from_formatted( i_time = i_formatted_time
                                  i_format = value #( ) ).
 
   endmethod.

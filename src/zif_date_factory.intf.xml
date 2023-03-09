@@ -10,6 +10,253 @@
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string and a country</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_CURRENT_USER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_DDMMYYYY_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;DD.MM.YYYY&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_DEFAULT_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string in the default format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string in specified format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_IRANIAN_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from an Iranian date string &apos;YYYY/MM/DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_ISLAMIC1_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from an Islamic date string &apos;YYYY/MM/DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_ISLAMIC2_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from an Islamic date string &apos;YYYY/MM/DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_ISO_8601_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string in ISO format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_JAPANESE1_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a Japanese date string &apos;GYY.MM.DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_JAPANESE2_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a Japanese date string &apos;GYY/MM/DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_JAPANESE3_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a Japanese date string &apos;GYY-MM-DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_MMDDYYYY1_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;MM/DD/YYYY&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_MMDDYYYY2_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;MM-DD-YYYY&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to a time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_COUNTRY_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CTRY_REGN_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CTRY_ZIP_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to a location time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_CURR_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to the user time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_DEFAULT_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to the default tz</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_SYSTEM_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to the system time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_USER_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to a user time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_TIMESTAMP_TO_UTC_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a time stamp to UTC time zone</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_USER_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string and a user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_YYYYMMDD1_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;YYYY.MM.DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_YYYYMMDD2_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;YYYY/MM/DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_YYYYMMDD3_FORMATTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new date from a date string &apos;YYYY-MM-DD&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_COUNTRY_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_CURRENT_USER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_DDMMYYYY_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_DEFAULT_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_DEFAULT_FORMATTED</CMPNAME>
+     <SCONAME>R_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_IRANIAN_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_ISLAMIC1_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_ISLAMIC2_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_ISO_8601_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_JAPANESE1_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_JAPANESE2_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_JAPANESE3_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_MMDDYYYY1_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_MMDDYYYY2_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_USER_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_YYYYMMDD1_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_YYYYMMDD2_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FROM_YYYYMMDD3_FORMATTED</CMPNAME>
+     <SCONAME>I_FORMATTED_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>String that represents a date in an external format</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

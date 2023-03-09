@@ -1,27 +1,32 @@
+"! <p class="shorttext synchronized" lang="EN">Time format</p>
 class zcl_time_format definition
                       public
                       create public.
 
-    public section.
+  public section.
 
-      interfaces: zif_time_format.
+    interfaces: zif_time_format.
 
-      aliases: check for zif_time_format~check,
-               delimiter for zif_time_format~delimiter,
-               describer_in for zif_time_format~describer_in,
-               is_valid for zif_time_format~is_valid,
-               localized_describer for zif_time_format~localized_describer,
-               valid_value_or_error for zif_time_format~valid_value_or_error,
-               valid_value_or_fallback for zif_time_format~valid_value_or_fallback,
-               value for zif_time_format~value.
+    aliases: check for zif_time_format~check,
+             delimiter for zif_time_format~delimiter,
+             describer_in for zif_time_format~describer_in,
+             is_valid for zif_time_format~is_valid,
+             localized_describer for zif_time_format~localized_describer,
+             valid_value_or_error for zif_time_format~valid_value_or_error,
+             valid_value_or_fallback for zif_time_format~valid_value_or_fallback,
+             value for zif_time_format~value.
 
-      methods constructor
-                importing
-                  i_value type zif_time_format=>t_value.
+  "! <p class="shorttext synchronized" lang="EN">Instantiates a format with the provided value</p>
+  "!
+  "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
+    methods constructor
+              importing
+                i_value type zif_time_format=>t_value.
 
-    protected section.
+  protected section.
 
-      data a_value type zif_time_format=>t_value.
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this format object</p>
+    data a_value type zif_time_format=>t_value.
 
 endclass.
 

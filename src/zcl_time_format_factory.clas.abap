@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Time format factory</p>
 class zcl_time_format_factory definition
                               public
                               create public.
@@ -19,39 +20,51 @@ class zcl_time_format_factory definition
              _1_to_12_lower for zif_time_format_factory~_1_to_12_lower,
              _24h for zif_time_format_factory~_24h.
 
+    "! <p class="shorttext synchronized" lang="EN">Initializes a hash-map using the formats constant</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN"></p>
     types t_format_name type string.
 
-    types t_format_code type string.
+    "! <p class="shorttext synchronized" lang="EN">ABAP code for the format</p>
+    types t_format_code type xutimefm.
 
-    types: begin of t_implemented_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_implemented_format,
              code type zcl_time_format_factory=>t_format_code,
              name type zcl_time_format_factory=>t_format_name,
            end of t_implemented_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_implemented_format_map type hashed table of zcl_time_format_factory=>t_implemented_format with unique key code.
 
-    types: begin of t_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_format,
              key type zcl_time_format_factory=>t_format_name,
              value type ref to zif_time_format,
            end of t_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_format_map type hashed table of zcl_time_format_factory=>t_format with unique key key.
 
-    types: begin of t_user_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_user_format,
              key type uname,
              value type zcl_time_format_factory=>t_format_name,
            end of t_user_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_user_format_map type hashed table of zcl_time_format_factory=>t_user_format with unique key key.
 
-    types: begin of t_country_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_country_format,
              key type land1,
              value type zcl_time_format_factory=>t_format_name,
            end of t_country_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_format_map type hashed table of zcl_time_format_factory=>t_country_format with unique key key.
 
-    constants: begin of implemented_format,
+    constants: "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
+               begin of implemented_format,
                  begin of _24h,
                    code type zcl_time_format_factory=>t_format_code value cl_abap_timefm=>fm_24h,
                    name type zcl_time_format_factory=>t_format_name value `24h` ##NO_TEXT,
@@ -74,6 +87,14 @@ class zcl_time_format_factory definition
                  end of _1_to_12_lower,
                end of implemented_format.
 
+    "! <p class="shorttext synchronized" lang="EN">Returns a format using a key</p>
+    "! If the key is found in the hash-map, return the existing instance.
+    "! If the key is not found, create a new instance, add it to the hash-map, and return it.
+    "!
+    "!  @parameter i_key | <p class="shorttext synchronized" lang="en"></p>
+    "! @parameter i_constructor_parameter | <p class="shorttext synchronized" lang="en"></p>
+    "! @parameter r_format | <p class="shorttext synchronized" lang="en"></p>
+    "! @raising zcx_time_format | <p class="shorttext synchronized" lang="en"></p>
     methods from_frmat_map_or_lazy_initalz
               importing
                 i_key type zcl_time_format_factory=>t_format_name
@@ -83,15 +104,20 @@ class zcl_time_format_factory definition
              raising
                zcx_time_format.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between internal and external codes</p>
     class-data an_implemented_format_map type zcl_time_format_factory=>t_implemented_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the initialized formats</p>
     class-data a_lazy_format_map type zcl_time_format_factory=>t_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between users and formats</p>
     class-data a_lazy_user_format_map type zcl_time_format_factory=>t_user_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between countries and formats</p>
     class-data a_lazy_country_format_map type zcl_time_format_factory=>t_country_format_map.
 
-    class-data a_current_user_format_code type xutimefm.
+    "! <p class="shorttext synchronized" lang="EN">ABAP code for the format of the current user</p>
+    class-data a_current_user_format_code type zcl_time_format_factory=>t_format_code.
 
 endclass.
 
@@ -132,7 +158,7 @@ class zcl_time_format_factory implementation.
 
     catch cx_sy_itab_line_not_found.
 
-      data(format) = new zcl_time_format( i_constructor_parameter )->check( ).
+      data(format) = new zcl_time_format( conv #( i_constructor_parameter ) )->check( ).
 
       zcl_time_format_factory=>a_lazy_format_map = value #( base zcl_time_format_factory=>a_lazy_format_map
                                                             ( value #( key = i_key
@@ -201,7 +227,7 @@ class zcl_time_format_factory implementation.
     if zcl_time_format_factory=>a_current_user_format_code is not initial.
 
       r_current_user_time_format = me->from_frmat_map_or_lazy_initalz( i_key = zcl_time_format_factory=>an_implemented_format_map[ code = zcl_time_format_factory=>a_current_user_format_code ]-name
-                                                                       i_constructor_parameter = conv #( zcl_time_format_factory=>a_current_user_format_code ) ).
+                                                                       i_constructor_parameter = zcl_time_format_factory=>a_current_user_format_code ).
 
     else.
 
@@ -211,7 +237,7 @@ class zcl_time_format_factory implementation.
 
       r_current_user_time_format = me->from_user_or_fallback( i_user = cl_abap_syst=>get_user_name( )
                                                               i_fallback = me->from_frmat_map_or_lazy_initalz( i_key = zcl_time_format_factory=>an_implemented_format_map[ code = zcl_time_format_factory=>a_current_user_format_code ]-name
-                                                                                                               i_constructor_parameter = conv #( zcl_time_format_factory=>a_current_user_format_code ) ) ).
+                                                                                                               i_constructor_parameter = zcl_time_format_factory=>a_current_user_format_code ) ).
 
     endif.
 

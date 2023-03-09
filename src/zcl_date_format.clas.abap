@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Date format</p>
 class zcl_date_format definition
                       public
                       create public.
@@ -15,12 +16,16 @@ class zcl_date_format definition
              valid_value_or_error for zif_date_format~valid_value_or_error,
              valid_value_or_fallback for zif_date_format~valid_value_or_fallback.
 
+    "! <p class="shorttext synchronized" lang="EN">Instantiates a format with the provided value</p>
+    "!
+    "! @parameter i_value | <p class="shorttext synchronized" lang="EN">A value (validity not checked)</p>
     methods constructor
               importing
                 i_value type zif_date_format=>t_value.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN">The actual value of this format object</p>
     data a_value type zif_date_format=>t_value.
 
 endclass.

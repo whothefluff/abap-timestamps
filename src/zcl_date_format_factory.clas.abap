@@ -1,3 +1,4 @@
+"! <p class="shorttext synchronized" lang="EN">Date format factory</p>
 class zcl_date_format_factory definition
                               public
                               create public.
@@ -26,91 +27,109 @@ class zcl_date_format_factory definition
              japanese2 for zif_date_format_factory~japanese2,
              japanese3 for zif_date_format_factory~japanese3.
 
+    "! <p class="shorttext synchronized" lang="EN">Initializes a hash-map using the formats constant</p>
     class-methods class_constructor.
 
   protected section.
 
+    "! <p class="shorttext synchronized" lang="EN"></p>
     types t_format_name type string.
 
-    types t_format_code type string.
+    "! <p class="shorttext synchronized" lang="EN">ABAP code for the format</p>
+    types t_format_code type xudatfm.
 
-    types: begin of t_implemented_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_implemented_format,
              code type zcl_date_format_factory=>t_format_code,
              name type zcl_date_format_factory=>t_format_name,
            end of t_implemented_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_implemented_format_map type hashed table of zcl_date_format_factory=>t_implemented_format with unique key code.
 
-    types: begin of t_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_format,
              key type zcl_date_format_factory=>t_format_name,
              value type ref to zif_date_format,
            end of t_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_format_map type hashed table of zcl_date_format_factory=>t_format with unique key key.
 
-    types: begin of t_user_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_user_format,
              key type uname,
              value type zcl_date_format_factory=>t_format_name,
            end of t_user_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_user_format_map type hashed table of zcl_date_format_factory=>t_user_format with unique key key.
 
-    types: begin of t_country_format,
+    types: "! <p class="shorttext synchronized" lang="EN"></p>
+           begin of t_country_format,
              key type land1,
              value type zcl_date_format_factory=>t_format_name,
            end of t_country_format,
+           "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_format_map type hashed table of zcl_date_format_factory=>t_country_format with unique key key.
 
-    class-data a_current_user_format_code type xudatfm.
-
-    constants: begin of implemented_format,
+    constants: "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
+               begin of implemented_format,
                  begin of ddmmyyyy,
-                   code type zcl_date_format_factory=>t_format_code value `1`,
+                   code type zcl_date_format_factory=>t_format_code value '1',
                    name type zcl_date_format_factory=>t_format_name value `ddmmyyyy` ##NO_TEXT,
                  end of ddmmyyyy,
                  begin of mmddyyyy1,
-                   code type zcl_date_format_factory=>t_format_code value `2`,
+                   code type zcl_date_format_factory=>t_format_code value '2',
                    name type zcl_date_format_factory=>t_format_name value `mmddyyyy1` ##NO_TEXT,
                  end of mmddyyyy1,
                  begin of mmddyyyy2,
-                   code type zcl_date_format_factory=>t_format_code value `3`,
+                   code type zcl_date_format_factory=>t_format_code value '3',
                    name type zcl_date_format_factory=>t_format_name value `mmddyyyy2` ##NO_TEXT,
                  end of mmddyyyy2,
                  begin of yyyymmdd1,
-                   code type zcl_date_format_factory=>t_format_code value `4`,
+                   code type zcl_date_format_factory=>t_format_code value '4',
                    name type zcl_date_format_factory=>t_format_name value `yyyymmdd1` ##NO_TEXT,
                  end of yyyymmdd1,
                  begin of yyyymmdd2,
-                   code type zcl_date_format_factory=>t_format_code value `5`,
+                   code type zcl_date_format_factory=>t_format_code value '5',
                    name type zcl_date_format_factory=>t_format_name value `yyyymmdd2` ##NO_TEXT,
                  end of yyyymmdd2,
                  begin of yyyymmdd3,
-                   code type zcl_date_format_factory=>t_format_code value `6`,
+                   code type zcl_date_format_factory=>t_format_code value '6',
                    name type zcl_date_format_factory=>t_format_name value `yyyymmdd3` ##NO_TEXT,
                  end of yyyymmdd3,
                  begin of japanese1,
-                   code type zcl_date_format_factory=>t_format_code value `7`,
+                   code type zcl_date_format_factory=>t_format_code value '7',
                    name type zcl_date_format_factory=>t_format_name value `japanese1` ##NO_TEXT,
                  end of japanese1,
                  begin of japanese2,
-                   code type zcl_date_format_factory=>t_format_code value `8`,
+                   code type zcl_date_format_factory=>t_format_code value '8',
                    name type zcl_date_format_factory=>t_format_name value `japanese2` ##NO_TEXT,
                  end of japanese2,
                  begin of japanese3,
-                   code type zcl_date_format_factory=>t_format_code value `9`,
+                   code type zcl_date_format_factory=>t_format_code value '9',
                    name type zcl_date_format_factory=>t_format_name value `japanese3` ##NO_TEXT,
                  end of japanese3,
                  begin of islamic1,
-                   code type zcl_date_format_factory=>t_format_code value `A`,
+                   code type zcl_date_format_factory=>t_format_code value 'A',
                    name type zcl_date_format_factory=>t_format_name value `islamic1` ##NO_TEXT,
                  end of islamic1,
                  begin of islamic2,
-                   code type zcl_date_format_factory=>t_format_code value `B`,
+                   code type zcl_date_format_factory=>t_format_code value 'B',
                    name type zcl_date_format_factory=>t_format_name value `islamic2` ##NO_TEXT,
                  end of islamic2,
                  begin of iranian,
-                   code type zcl_date_format_factory=>t_format_code value `C`,
+                   code type zcl_date_format_factory=>t_format_code value 'C',
                    name type zcl_date_format_factory=>t_format_name value `iranian` ##NO_TEXT,
                  end of iranian,
                end of implemented_format.
 
+    "! <p class="shorttext synchronized" lang="EN">Returns a format using a key</p>
+    "! If the key is found in the hash-map, return the existing instance.
+    "! If the key is not found, create a new instance, add it to the hash-map, and return it.
+    "!
+    "! @parameter i_key | <p class="shorttext synchronized" lang="EN"></p>
+    "! @parameter i_constructor_parameter | <p class="shorttext synchronized" lang="EN"></p>
+    "! @parameter r_format | <p class="shorttext synchronized" lang="EN"></p>
+    "! @raising zcx_date_format | <p class="shorttext synchronized" lang="EN"></p>
     methods from_frmat_map_or_lazy_initalz
               importing
                 i_key type zcl_date_format_factory=>t_format_name
@@ -120,13 +139,20 @@ class zcl_date_format_factory definition
              raising
                zcx_date_format.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between internal and external codes</p>
     class-data an_implemented_format_map type zcl_date_format_factory=>t_implemented_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the initialized formats</p>
     class-data a_lazy_format_map type zcl_date_format_factory=>t_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between users and formats</p>
     class-data a_lazy_user_format_map type zcl_date_format_factory=>t_user_format_map.
 
+    "! <p class="shorttext synchronized" lang="EN">Stores the relationship between countries and formats</p>
     class-data a_lazy_country_format_map type zcl_date_format_factory=>t_country_format_map.
+
+    "! <p class="shorttext synchronized" lang="EN">ABAP code for the format of the current user</p>
+    class-data a_current_user_format_code type zcl_date_format_factory=>t_format_code.
 
 endclass.
 
@@ -167,7 +193,7 @@ class zcl_date_format_factory implementation.
 
     catch cx_sy_itab_line_not_found.
 
-      data(format) = new zcl_date_format( i_constructor_parameter )->check( ).
+      data(format) = new zcl_date_format( conv #( i_constructor_parameter ) )->check( ).
 
       zcl_date_format_factory=>a_lazy_format_map = value #( base zcl_date_format_factory=>a_lazy_format_map
                                                             ( value #( key = i_key
@@ -244,7 +270,7 @@ class zcl_date_format_factory implementation.
     if zcl_date_format_factory=>a_current_user_format_code is not initial ##DATE_FORMAT.
 
       r_current_user_date_format = me->from_frmat_map_or_lazy_initalz( i_key = zcl_date_format_factory=>an_implemented_format_map[ code = zcl_date_format_factory=>a_current_user_format_code ]-name
-                                                                       i_constructor_parameter = conv #( zcl_date_format_factory=>a_current_user_format_code ) ).
+                                                                       i_constructor_parameter = zcl_date_format_factory=>a_current_user_format_code ).
 
     else.
 
@@ -254,7 +280,7 @@ class zcl_date_format_factory implementation.
 
       r_current_user_date_format = me->from_user_or_fallback( i_user = cl_abap_syst=>get_user_name( )
                                                               i_fallback = me->from_frmat_map_or_lazy_initalz( i_key = zcl_date_format_factory=>an_implemented_format_map[ code = zcl_date_format_factory=>a_current_user_format_code ]-name
-                                                                                                               i_constructor_parameter = conv #( zcl_date_format_factory=>a_current_user_format_code ) ) ).
+                                                                                                               i_constructor_parameter = zcl_date_format_factory=>a_current_user_format_code ) ).
 
     endif.
 

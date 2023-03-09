@@ -11,6 +11,53 @@
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>AN_IMPLEMENTED_FORMAT_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between internal and external codes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_CURRENT_USER_FORMAT_CODE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP code for the format of the current user</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_COUNTRY_FORMAT_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between countries and formats</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_FORMAT_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the initialized formats</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_LAZY_USER_FORMAT_MAP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Stores the relationship between users and formats</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Initializes a hash-map using the formats constant</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_FRMAT_MAP_OR_LAZY_INITALZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns a format using a key</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPLEMENTED_FORMAT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>All implemented formats</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_FORMAT_CODE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP code for the format</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>
