@@ -9,15 +9,6 @@ interface zif_timestamp public.
   "! <p class="shorttext synchronized" lang="EN">Internal type without milliseconds</p>
   types t_short_value type xsddatetime_z.
 
-  "! <p class="shorttext synchronized" lang="EN"></p>
-  constants short_min type zif_timestamp=>t_short_value value '00010101000000'.
-
-  "! <p class="shorttext synchronized" lang="EN"></p>
-  constants min type zif_timestamp=>t_value value '00010101000000.0000000'.
-
-  "! <p class="shorttext synchronized" lang="EN"></p>
-  constants max type zif_timestamp=>t_value value '99991231235959.9999999'.
-
   "! <p class="shorttext synchronized" lang="EN">Returns the value of this time stamp as is</p>
   "!
   "! @parameter r_value | <p class="shorttext synchronized" lang="EN"></p>
@@ -43,7 +34,7 @@ interface zif_timestamp public.
   "! @parameter r_valid_value | <p class="shorttext synchronized" lang="EN"></p>
   methods valid_value_or_fallback
             importing
-              i_fallback type zif_timestamp=>t_value default zif_timestamp=>min
+              i_fallback type zif_timestamp=>t_value
             returning
               value(r_valid_value) type zif_timestamp=>t_value.
 
@@ -72,7 +63,7 @@ interface zif_timestamp public.
   "! @parameter r_valid_short_value | <p class="shorttext synchronized" lang="EN"></p>
   methods valid_short_value_or_fallback
             importing
-              i_fallback type zif_timestamp=>t_short_value default zif_timestamp=>short_min
+              i_fallback type zif_timestamp=>t_short_value
             returning
               value(r_valid_short_value) type zif_timestamp=>t_short_value.
 

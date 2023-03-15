@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Time factory</p>
+"! Creates instances of {@link ZCL_TIME}
 class zcl_time_factory definition
                        public
                        create public.
@@ -26,7 +27,11 @@ class zcl_time_factory definition
              from_timestamp_to_curr_user_tz for zif_time_factory~from_timestamp_to_curr_user_tz,
              from_timestamp_to_system_tz for zif_time_factory~from_timestamp_to_system_tz,
              from_timestamp_to_user_tz for zif_time_factory~from_timestamp_to_user_tz,
-             from_user_formatted for zif_time_factory~from_user_formatted.
+             from_user_formatted for zif_time_factory~from_user_formatted,
+             null for zif_time_factory~null,
+             initial for zif_time_factory~initial,
+             min for zif_time_factory~min,
+             max for zif_time_factory~max.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a time factory</p>
     "!
@@ -204,6 +209,26 @@ class zcl_time_factory implementation.
 
     r_time = me->from_timestamp( i_timestamp = i_timestamp
                                  i_to_time_zone = me->a_time_zone_factory->utc( ) ).
+
+  endmethod.
+  method zif_time_factory~initial.
+
+    r_time = new zcl_time( '000000' ). "the initial value for time is a valid value
+
+  endmethod.
+  method zif_time_factory~max.
+
+    r_time = new zcl_time( '235959' )->check( ). "must be valid
+
+  endmethod.
+  method zif_time_factory~min.
+
+    r_time = new zcl_time( '000000' )->check( ). "must be valid
+
+  endmethod.
+  method zif_time_factory~null.
+
+    r_time = new zcl_time( '      ' ). "not valid
 
   endmethod.
 

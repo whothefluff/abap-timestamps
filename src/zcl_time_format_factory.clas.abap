@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Time format factory</p>
+"! Creates instances of {@link ZCL_TIME_FORMAT}
 class zcl_time_format_factory definition
                               public
                               create public.

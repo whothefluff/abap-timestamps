@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Time zone factory</p>
+"! Creates instances of {@link ZCL_TIME_ZONE}
 class zcl_time_zone_factory definition
                             public
                             create public.

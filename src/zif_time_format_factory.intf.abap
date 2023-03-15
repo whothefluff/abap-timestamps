@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Time format factory</p>
+"! Creates instances of {@link ZIF_TIME_FORMAT}
 interface zif_time_format_factory public.
 
   "! <p class="shorttext synchronized" lang="EN">Returns the format of a user according to master data</p>

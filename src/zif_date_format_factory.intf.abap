@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Date format factory</p>
+"! Creates instances of {@link ZIF_DATE_FORMAT}
 interface zif_date_format_factory public.
 
   "! <p class="shorttext synchronized" lang="EN">Returns the format of a user</p>

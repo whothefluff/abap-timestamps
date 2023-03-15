@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Date format factory</p>
+"! Creates instances of {@link ZCL_DATE_FORMAT}
 class zcl_date_format_factory definition
                               public
                               create public.

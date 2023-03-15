@@ -1,5 +1,46 @@
 "! <p class="shorttext synchronized" lang="EN">Date factory</p>
+"! Creates instances of {@link ZIF_DATE}
 interface zif_date_factory public.
+
+  "! <p class="shorttext synchronized" lang="EN">Null value</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods null
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Initial value</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods initial
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Min value allowed</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods min
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Max value allowed</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods max
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
 
   "! <p class="shorttext synchronized" lang="EN">Creates a new date from a time stamp to a time zone</p>
   "!

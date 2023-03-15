@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Time zone factory</p>
+"! Creates instances of {@link ZIF_TIME_ZONE}
 interface zif_time_zone_factory public.
 
   "! <p class="shorttext synchronized" lang="EN">Returns the default time zone</p>

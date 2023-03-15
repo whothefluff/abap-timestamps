@@ -1,4 +1,5 @@
 "! <p class="shorttext synchronized" lang="EN">Date factory</p>
+"! Creates instances of {@link ZCL_DATE}
 class zcl_date_factory definition
                        public
                        create public.
@@ -33,7 +34,11 @@ class zcl_date_factory definition
              from_timestamp_to_ctry_zip_tz for zif_date_factory~from_timestamp_to_ctry_zip_tz,
              from_timestamp_to_curr_user_tz for zif_date_factory~from_timestamp_to_curr_user_tz,
              from_timestamp_to_system_tz for zif_date_factory~from_timestamp_to_system_tz,
-             from_timestamp_to_user_tz for zif_date_factory~from_timestamp_to_user_tz.
+             from_timestamp_to_user_tz for zif_date_factory~from_timestamp_to_user_tz,
+             null for zif_date_factory~null,
+             initial for zif_date_factory~initial,
+             min for zif_date_factory~min,
+             max for zif_date_factory~max.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a date factory</p>
     "!
@@ -274,6 +279,26 @@ class zcl_date_factory implementation.
 
     r_date = me->from_timestamp( i_timestamp = i_timestamp
                                  i_to_time_zone = me->a_time_zone_factory->utc( ) ).
+
+  endmethod.
+  method zif_date_factory~initial.
+
+    r_date = new zcl_date( '00000000' ). "not valid
+
+  endmethod.
+  method zif_date_factory~max.
+
+    r_date = new zcl_date( '99991231' )->check( ). "must be valid
+
+  endmethod.
+  method zif_date_factory~min.
+
+    r_date = new zcl_date( '00010101' )->check( ). "must be valid
+
+  endmethod.
+  method zif_date_factory~null.
+
+    r_date = new zcl_date( '        ' ). "not valid
 
   endmethod.
 

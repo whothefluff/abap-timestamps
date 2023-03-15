@@ -5,7 +5,7 @@
    <VSEOINTERF>
     <CLSNAME>ZIF_TIMESTAMP_FACTORY</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Creates instances of {@link zif_timestamp}</DESCRIPT>
+    <DESCRIPT>Time stamp factory</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
@@ -14,37 +14,72 @@
     <SEOCOMPOTX>
      <CMPNAME>CURRENT</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} of the system time and date</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the system time and date</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided arguments</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_AND_REGION_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a UTC time stamp from the provided arguments</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_AND_ZIP_CODE_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a UTC time stamp from the provided arguments</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FROM_COUNTRY_TZ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a UTC time stamp from the provided arguments</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_CURRENT_USER_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_DEFAULT_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_SYSTEM_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_USER_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided arguments</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FROM_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Creates a {@link zif_timestamp} with the provided values</DESCRIPT>
+     <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INITIAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Initial value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAX</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Max value allowed</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MIN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Min value allowed</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NULL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Null value</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
   </asx:values>

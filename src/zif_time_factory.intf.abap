@@ -1,5 +1,46 @@
 "! <p class="shorttext synchronized" lang="EN">Time factory</p>
+"! Creates instances of {@link ZIF_TIME}
 interface zif_time_factory public.
+
+  "! <p class="shorttext synchronized" lang="EN">Null value</p>
+  "!
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods null
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Initial value</p>
+  "!
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods initial
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Min value allowed</p>
+  "!
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods min
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Max value allowed</p>
+  "!
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods max
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
 
   "! <p class="shorttext synchronized" lang="EN">Creates a new time from a time stamp to a time zone</p>
   "!

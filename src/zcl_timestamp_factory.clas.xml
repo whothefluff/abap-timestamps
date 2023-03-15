@@ -5,12 +5,42 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_TIMESTAMP_FACTORY</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Creates instances of {@link zcl_timestamp}</DESCRIPT>
+    <DESCRIPT>Time stamp factory</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>A_DEFAULT_TIME_ZONE_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Time zone factory when none is provided</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>A_TIME_ZONE_FACTORY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The time zone factory used for conversions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instantiates the default time zone factory</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instantiates a time stamp factory</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_TIME_ZONE_FACTORY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default time zone factory replacement</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

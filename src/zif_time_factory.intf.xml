@@ -111,6 +111,26 @@
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a new time from a time string and a user</DESCRIPT>
     </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INITIAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Initial value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAX</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Max value allowed</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MIN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Min value allowed</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NULL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Null value</DESCRIPT>
+    </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
     <SEOSUBCOTX>
