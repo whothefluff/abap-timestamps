@@ -36,7 +36,12 @@ class zcl_timestamp definition
              to_time_for_tz_of_ctry_region for zif_timestamp~to_time_for_tz_of_ctry_region,
              to_time_for_tz_of_ctry_zip for zif_timestamp~to_time_for_tz_of_ctry_zip,
              to_time_for_tz_of_current_user for zif_timestamp~to_time_for_tz_of_current_user,
-             to_time_for_tz_of_user for zif_timestamp~to_time_for_tz_of_user.
+             to_time_for_tz_of_user for zif_timestamp~to_time_for_tz_of_user,
+             equals for zif_timestamp~equals,
+             is_earlier_than for zif_timestamp~is_earlier_than,
+             is_later_than for zif_timestamp~is_later_than,
+             is_later_than_or_equal_to for zif_timestamp~is_later_than_or_equal_to,
+             is_earlier_than_or_equal_to for zif_timestamp~is_earlier_than_or_equal_to.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a time stamp with the provided value</p>
     "!
@@ -205,7 +210,7 @@ class zcl_timestamp implementation.
       me->a_value = cl_abap_tstmp=>add( tstmp = conv timestampl( me->value( ) )
                                         secs = i_seconds + ( i_minutes * seconds_in_a_minute ) + ( i_hours * seconds_in_an_hour ) + ( i_days * seconds_in_a_day ) ).
 
-      r_self = me.
+      r_timestamp = me.
 
     catch cx_parameter_invalid_range
           cx_parameter_invalid_type.
@@ -217,7 +222,7 @@ class zcl_timestamp implementation.
   endmethod.
   method zif_timestamp~subtract.
 
-    r_self = me->add( i_seconds = i_seconds * -1
+    r_timestamp = me->add( i_seconds = i_seconds * -1
                       i_minutes = i_minutes * -1
                       i_hours = i_hours * -1
                       i_days = i_days * -1 ).
@@ -328,6 +333,31 @@ class zcl_timestamp implementation.
   method zif_timestamp~to_time_for_system_tz.
 
     r_timestamp_time = me->a_time_factory->from_timestamp_to_system_tz( me ).
+
+  endmethod.
+  method zif_timestamp~equals.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) eq i_another_timestamp->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_timestamp~is_earlier_than.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) lt i_another_timestamp->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_timestamp~is_earlier_than_or_equal_to.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) le i_another_timestamp->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_timestamp~is_later_than.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) gt i_another_timestamp->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_timestamp~is_later_than_or_equal_to.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) ge i_another_timestamp->valid_value_or_error( ) ).
 
   endmethod.
 

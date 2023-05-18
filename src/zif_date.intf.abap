@@ -272,4 +272,259 @@ interface zif_date public.
               zcx_date
               zcx_date_format.
 
+  "! <p class="shorttext synchronized" lang="EN">Returns true if both dates have the same valid value</p>
+  "!
+  "! @parameter i_another_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods equals
+            importing
+              i_another_date type ref to zif_date
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied date is ahead</p>
+  "!
+  "! @parameter i_another_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_earlier_than
+            importing
+              i_another_date type ref to zif_date
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied date is behind</p>
+  "!
+  "! @parameter i_another_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_later_than
+            importing
+              i_another_date type ref to zif_date
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied date is ahead or equal</p>
+  "!
+  "! @parameter i_another_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_earlier_than_or_equal_to
+            importing
+              i_another_date type ref to zif_date
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied date is behind or equal</p>
+  "!
+  "! @parameter i_another_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_later_than_or_equal_to
+            importing
+              i_another_date type ref to zif_date
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the number of day of the year (1-365)</p>
+  "!
+  "! @parameter r_day_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods day_of_year
+            returning
+              value(r_day_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the number of day of the month (1-31)</p>
+  "!
+  "! @parameter r_day_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods day_of_month
+            returning
+              value(r_day_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the year</p>
+  "!
+  "! @parameter r_year | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods year
+            returning
+              value(r_year) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the number of the week for the year</p>
+  "!
+  "! @parameter r_week_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods week_of_year
+            returning
+              value(r_week_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the day of the week (1-7)</p>
+  "!
+  "! @parameter r_day_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods day_of_week
+            returning
+              value(r_day_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the name of the day of the week</p>
+  "!
+  "! @parameter r_day_name | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods name_of_day_of_week_in
+            importing
+              i_language type I_Language-Language
+            returning
+              value(r_day_name) type string
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the name of the day of the week</p>
+  "!
+  "! @parameter r_day_name | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods localized_name_of_day_of_week
+            returning
+              value(r_day_name) type string
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the month (1-12)</p>
+  "!
+  "! @parameter r_month_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods month
+            returning
+              value(r_month_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the name of month</p>
+  "!
+  "! @parameter r_month_name | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising cx_scal | <p class="shorttext synchronized" lang="EN"></p>
+  methods name_of_month_in
+            importing
+              i_language type I_Language-Language
+            returning
+              value(r_month_name) type string
+            raising
+              cx_scal.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the name of month</p>
+  "!
+  "! @parameter r_month_name | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising cx_scal | <p class="shorttext synchronized" lang="EN"></p>
+  methods localized_name_of_month
+            returning
+              value(r_month_name) type string
+            raising
+              cx_scal.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the number of the last day of the month (28-31)</p>
+  "!
+  "! @parameter r_day_number | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_month
+            returning
+              value(r_day_number) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true if February has 29 days</p>
+  "!
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_leap_year
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Adds supplied number of days to this date</p>
+  "!
+  "! @parameter i_days | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods add_days
+            importing
+              i_days type i
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Subtracts supplied number of days to this date</p>
+  "!
+  "! @parameter i_days | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods subtract_days
+            importing
+              i_days type i
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the number of the last day of the next month (28-31)</p>
+  "!
+  "! @parameter r_last_day | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_next_month
+            returning
+              value(r_last_day) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the the last day of the previous month (28-31)</p>
+  "!
+  "! @parameter r_last_day | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_previous_month
+            returning
+              value(r_last_day) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the next leap year (exclusive count)</p>
+  "!
+  "! @parameter r_year | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods next_leap_year
+            returning
+              value(r_year) type i
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the previous leap year (exclusive count)</p>
+  "!
+  "! @parameter r_year | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods previous_leap_year
+            returning
+              value(r_year) type i
+            raising
+              zcx_date.
+
 endinterface.

@@ -20,7 +20,8 @@ class zcl_time_zone_factory definition
 
   protected section.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_time_zone,
              key type zif_time_zone=>t_value,
              value type ref to zif_time_zone,
@@ -28,7 +29,8 @@ class zcl_time_zone_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_time_zone_map type hashed table of zcl_time_zone_factory=>t_time_zone with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_country_time_zone,
              key type land1,
              value type zif_time_zone=>t_value,
@@ -36,7 +38,8 @@ class zcl_time_zone_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_time_zone_map type hashed table of zcl_time_zone_factory=>t_country_time_zone with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_cntry_reg_key,
              country type land1,
              region type regio,
@@ -49,7 +52,8 @@ class zcl_time_zone_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_cntry_reg_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_reg_time_zone with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_cntry_zip_key,
              country type land1,
              zip_code type tznzipgene,
@@ -62,7 +66,8 @@ class zcl_time_zone_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_cntry_zip_time_zone_map type hashed table of zcl_time_zone_factory=>t_cntry_zip_time_zone with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_user_time_zone,
              key type uname,
              value type zif_time_zone=>t_value,

@@ -461,4 +461,139 @@ interface zif_date_factory public.
               zcx_date
               zcx_date_format.
 
+  "! <p class="shorttext synchronized" lang="EN">Creates the date for the current day</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods today
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates the date for the day after the current day</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods yesterday
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates the date for day before the current day</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods tomorrow
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates the date for easter of provided year</p>
+  "!
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods easter_of_year
+            importing
+              i_year type i
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for first day of month of supplied month</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods first_day_of_same_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for last day of month of supplied month</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_same_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for first day of month next to supplied month</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods first_day_of_next_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for last day of month next to supplied month</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_next_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for first day of month previous to supplied</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods first_day_of_previous_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for last day of month previous to supplied</p>
+  "!
+  "! @parameter i_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods last_day_of_previous_month_of
+            importing
+              i_date type ref to zif_date
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
+  "! <p class="shorttext synchronized" lang="EN">Creates a date for first day of supplied year + week number</p>
+  "!
+  "! @parameter i_year | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter i_week | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_date | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_date | <p class="shorttext synchronized" lang="EN"></p>
+  methods first_day_of_year_and_week
+            importing
+              i_year type i
+              i_week type i
+            returning
+              value(r_date) type ref to zif_date
+            raising
+              zcx_date.
+
 endinterface.

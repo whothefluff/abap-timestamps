@@ -22,6 +22,18 @@ class zcl_time definition
              to_format_of_user for zif_time~to_format_of_user,
              valid_value_or_error for zif_time~valid_value_or_error,
              valid_value_or_fallback for zif_time~valid_value_or_fallback,
+             equals for zif_time~equals,
+             is_earlier_than for zif_time~is_earlier_than,
+             is_earlier_than_or_equal_to for zif_time~is_earlier_than_or_equal_to,
+             is_later_than for zif_time~is_later_than,
+             is_later_than_or_equal_to for zif_time~is_later_than_or_equal_to,
+             add for zif_time~add,
+             subtract for zif_time~subtract,
+             hour for zif_time~hour,
+             seconds_since_midnight for zif_time~seconds_since_midnight,
+             second_of_minute for zif_time~second_of_minute,
+             minutes_since_midnight for zif_time~minutes_since_midnight,
+             minute_of_hour for zif_time~minute_of_hour,
              value for zif_time~value.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a time with the provided value</p>
@@ -172,6 +184,73 @@ class zcl_time implementation.
   method zif_time~to_format_default.
 
     r_formatted_time = me->to_format( me->a_format_factory->default( ) ).
+
+  endmethod.
+  method zif_time~equals.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) eq i_another_time->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_time~is_earlier_than.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) lt i_another_time->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_time~is_earlier_than_or_equal_to.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) le i_another_time->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_time~is_later_than.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) gt i_another_time->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_time~is_later_than_or_equal_to.
+
+    r_bool = xsdbool( me->valid_value_or_error( ) ge i_another_time->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_time~add.
+
+    me->a_value += i_seconds + ( i_minutes * 60 ) + ( i_hours * 60 * 60 ).
+
+    r_time = me.
+
+  endmethod.
+  method zif_time~subtract.
+
+    r_time = me->add( i_seconds = i_seconds * -1
+                      i_minutes = i_minutes * -1
+                      i_hours = i_hours * -1 ).
+
+  endmethod.
+  method zif_time~hour.
+
+    r_hour = conv #( let value = me->valid_value_or_error( ) in
+                     value(2) ).
+
+  endmethod.
+  method zif_time~minutes_since_midnight.
+
+    r_total_minutes = me->valid_value_or_error( ) / 60.
+
+  endmethod.
+  method zif_time~minute_of_hour.
+
+    r_minute = conv #( let value = me->valid_value_or_error( ) in
+                     value+2(2) ).
+
+  endmethod.
+  method zif_time~seconds_since_midnight.
+
+    r_total_seconds = me->valid_value_or_error( ).
+
+  endmethod.
+  method zif_time~second_of_minute.
+
+    r_second = conv #( let value = me->valid_value_or_error( ) in
+                       value+4(2) ).
 
   endmethod.
 

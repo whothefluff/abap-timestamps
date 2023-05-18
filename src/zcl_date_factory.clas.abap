@@ -38,7 +38,18 @@ class zcl_date_factory definition
              null for zif_date_factory~null,
              initial for zif_date_factory~initial,
              min for zif_date_factory~min,
-             max for zif_date_factory~max.
+             max for zif_date_factory~max,
+             today for zif_date_factory~today,
+             tomorrow for zif_date_factory~tomorrow,
+             easter_of_year for zif_date_factory~easter_of_year,
+             first_day_of_next_month_of for zif_date_factory~first_day_of_next_month_of,
+             first_day_of_previous_month_of for zif_date_factory~first_day_of_previous_month_of,
+             first_day_of_same_month_of for zif_date_factory~first_day_of_same_month_of,
+             last_day_of_next_month_of for zif_date_factory~last_day_of_next_month_of,
+             last_day_of_previous_month_of for zif_date_factory~last_day_of_previous_month_of,
+             last_day_of_same_month_of for zif_date_factory~last_day_of_same_month_of,
+             first_day_of_year_and_week for zif_date_factory~first_day_of_year_and_week,
+             yesterday for zif_date_factory~yesterday.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a date factory</p>
     "!
@@ -299,6 +310,126 @@ class zcl_date_factory implementation.
   method zif_date_factory~null.
 
     r_date = new zcl_date( '        ' ). "not valid
+
+  endmethod.
+  method zif_date_factory~today.
+
+    r_date = new zcl_date( cl_abap_context_info=>get_system_date( ) )->check( ).
+
+  endmethod.
+  method zif_date_factory~tomorrow.
+
+    r_date = new zcl_date( conv #( me->today( )->value( ) + 1 ) )->check( ). "check necessary for today( ) EQ max( )
+
+  endmethod.
+  method zif_date_factory~yesterday.
+
+    r_date = new zcl_date( conv #( me->today( )->value( ) - 1 ) )->check( ). "check necessary for today( ) EQ min( )
+
+  endmethod.
+  method zif_date_factory~easter_of_year.
+
+    data(easter_date) = value d( ).
+
+    call function 'EASTER_GET_DATE'
+      exporting
+        year         = conv cyear( i_year )
+      importing
+        easterdate   = easter_date
+      exceptions
+        year_invalid = 1
+        others       = 2.
+
+    if sy-subrc eq 0.
+
+      r_date = new zcl_date( easter_date )->check( ).
+
+    else.
+
+      raise exception new zcx_date( new zcl_text_symbol_msg( cond #( when sy-subrc eq 1
+                                                                     then 'Year is not valid'(004)
+                                                                     else 'Internal error'(005) ) ) ).
+
+    endif.
+
+  endmethod.
+  method zif_date_factory~first_day_of_next_month_of.
+
+    types two_chars_month type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->valid_value_or_error( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars_month( i_date->month( ) + 1 ) && `01` ) ) ).
+
+  endmethod.
+  method zif_date_factory~first_day_of_previous_month_of.
+
+    types two_chars_month type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->valid_value_or_error( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars_month( i_date->month( ) - 1 ) && `01` ) ) ).
+
+  endmethod.
+  method zif_date_factory~first_day_of_same_month_of.
+
+    types two_chars_month type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars_month( i_date->month( ) ) && `01` ) ) ).
+
+  endmethod.
+  method zif_date_factory~last_day_of_next_month_of.
+
+    types two_chars type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars( i_date->month( ) + 1 ) && conv two_chars( i_date->last_day_of_next_month( ) ) ) ) ).
+
+  endmethod.
+  method zif_date_factory~last_day_of_previous_month_of.
+
+    types two_chars type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars( i_date->month( ) - 1 ) && conv two_chars( i_date->last_day_of_previous_month( ) ) ) ) ).
+
+  endmethod.
+  method zif_date_factory~last_day_of_same_month_of.
+
+    types two_chars type n length 2.
+
+    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
+                                            off = 4
+                                            len = 4
+                                            with = conv two_chars( i_date->month( ) ) && conv two_chars( i_date->last_day_of_month( ) ) ) ) ).
+
+  endmethod.
+  method zif_date_factory~first_day_of_year_and_week.
+
+    try.
+
+      cl_scal_utils=>week_get_first_day( exporting iv_year_week = value #( )
+                                                   iv_year = conv #( i_year )
+                                                   iv_week = conv #( i_week )
+                                         importing ev_date = data(date) ).
+
+      r_date = new zcl_date( date )->check( ).
+
+    catch cx_scal into data(error).
+
+      raise exception new zcx_date( i_previous = error
+                                    i_t100_message = new zcl_text_symbol_msg( 'Date cannot be created from parameters'(006) ) ).
+
+    endtry.
 
   endmethod.
 

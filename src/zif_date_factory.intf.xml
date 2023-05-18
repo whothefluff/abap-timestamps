@@ -12,6 +12,31 @@
    </VSEOINTERF>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>EASTER_OF_YEAR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates the date for easter of provided year</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FIRST_DAY_OF_NEXT_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for first day of month next to supplied month</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FIRST_DAY_OF_PREVIOUS_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for first day of month previous to supplied</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FIRST_DAY_OF_SAME_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for first day of month of supplied month</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FIRST_DAY_OF_YEAR_AND_WEEK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for first day of supplied year + week number</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>FROM_COUNTRY_FORMATTED</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a new date from a date string and a country</DESCRIPT>
@@ -152,6 +177,21 @@
      <DESCRIPT>Initial value</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>LAST_DAY_OF_NEXT_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for last day of month next to supplied month</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LAST_DAY_OF_PREVIOUS_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for last day of month previous to supplied</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LAST_DAY_OF_SAME_MONTH_OF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a date for last day of month of supplied month</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>MAX</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Max value allowed</DESCRIPT>
@@ -165,6 +205,21 @@
      <CMPNAME>NULL</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Null value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TODAY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates the date for the current day</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TOMORROW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates the date for day before the current day</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>YESTERDAY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates the date for the day after the current day</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>

@@ -192,4 +192,153 @@ interface zif_time public.
               zcx_time
               zcx_time_format.
 
+  "! <p class="shorttext synchronized" lang="EN">Returns true if both times have the same valid value</p>
+  "!
+  "! @parameter i_another_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods equals
+            importing
+              i_another_time type ref to zif_time
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time is ahead</p>
+  "!
+  "! @parameter i_another_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_earlier_than
+            importing
+              i_another_time type ref to zif_time
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time is behind</p>
+  "!
+  "! @parameter i_another_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_later_than
+            importing
+              i_another_time type ref to zif_time
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time is ahead or equal</p>
+  "!
+  "! @parameter i_another_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_earlier_than_or_equal_to
+            importing
+              i_another_time type ref to zif_time
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time is behind or equal</p>
+  "!
+  "! @parameter i_another_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods is_later_than_or_equal_to
+            importing
+              i_another_time type ref to zif_time
+            returning
+              value(r_bool) type xsdboolean
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Adds values of provided arguments to this time</p>
+  "!
+  "! @parameter i_seconds | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter i_minutes | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter i_hours | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods add
+            importing
+              i_seconds type i
+              i_minutes type i
+              i_hours type i
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Adds values of provided arguments to this time</p>
+  "!
+  "! @parameter i_seconds | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter i_minutes | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter i_hours | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_time | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods subtract
+            importing
+              i_seconds type i
+              i_minutes type i
+              i_hours type i
+            returning
+              value(r_time) type ref to zif_time
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the hour (0-23)</p>
+  "!
+  "! @parameter r_hour | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods hour
+            returning
+              value(r_hour) type i
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the seconds since 00:00 (0-86400)</p>
+  "!
+  "! @parameter r_total_seconds | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods seconds_since_midnight
+            returning
+              value(r_total_seconds) type i
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns second of the minute (0-59)</p>
+  "!
+  "! @parameter r_second | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods second_of_minute
+            returning
+              value(r_second) type i
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns the minutes since 00:00 (0-1440)</p>
+  "!
+  "! @parameter r_total_minutes | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods minutes_since_midnight
+            returning
+              value(r_total_minutes) type i
+            raising
+              zcx_time.
+
+  "! <p class="shorttext synchronized" lang="EN">Returns minute of the hour (0-59)</p>
+  "!
+  "! @parameter r_minute | <p class="shorttext synchronized" lang="EN"></p>
+  "! @raising zcx_time | <p class="shorttext synchronized" lang="EN"></p>
+  methods minute_of_hour
+            returning
+              value(r_minute) type i
+            raising
+              zcx_time.
+
 endinterface.

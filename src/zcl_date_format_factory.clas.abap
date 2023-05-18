@@ -39,7 +39,8 @@ class zcl_date_format_factory definition
     "! <p class="shorttext synchronized" lang="EN">ABAP code for the format</p>
     types t_format_code type xudatfm.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_implemented_format,
              code type zcl_date_format_factory=>t_format_code,
              name type zcl_date_format_factory=>t_format_name,
@@ -47,7 +48,8 @@ class zcl_date_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_implemented_format_map type hashed table of zcl_date_format_factory=>t_implemented_format with unique key code.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_format,
              key type zcl_date_format_factory=>t_format_name,
              value type ref to zif_date_format,
@@ -55,7 +57,8 @@ class zcl_date_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_format_map type hashed table of zcl_date_format_factory=>t_format with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_user_format,
              key type uname,
              value type zcl_date_format_factory=>t_format_name,
@@ -63,7 +66,8 @@ class zcl_date_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_user_format_map type hashed table of zcl_date_format_factory=>t_user_format with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_country_format,
              key type land1,
              value type zcl_date_format_factory=>t_format_name,
@@ -71,7 +75,8 @@ class zcl_date_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_format_map type hashed table of zcl_date_format_factory=>t_country_format with unique key key.
 
-    constants: "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
+    constants:
+               "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
                begin of implemented_format,
                  begin of ddmmyyyy,
                    code type zcl_date_format_factory=>t_format_code value '1',

@@ -32,7 +32,8 @@ class zcl_time_format_factory definition
     "! <p class="shorttext synchronized" lang="EN">ABAP code for the format</p>
     types t_format_code type xutimefm.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_implemented_format,
              code type zcl_time_format_factory=>t_format_code,
              name type zcl_time_format_factory=>t_format_name,
@@ -40,7 +41,8 @@ class zcl_time_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_implemented_format_map type hashed table of zcl_time_format_factory=>t_implemented_format with unique key code.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_format,
              key type zcl_time_format_factory=>t_format_name,
              value type ref to zif_time_format,
@@ -48,7 +50,8 @@ class zcl_time_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_format_map type hashed table of zcl_time_format_factory=>t_format with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_user_format,
              key type uname,
              value type zcl_time_format_factory=>t_format_name,
@@ -56,7 +59,8 @@ class zcl_time_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_user_format_map type hashed table of zcl_time_format_factory=>t_user_format with unique key key.
 
-    types: "! <p class="shorttext synchronized" lang="EN"></p>
+    types:
+           "! <p class="shorttext synchronized" lang="EN"></p>
            begin of t_country_format,
              key type land1,
              value type zcl_time_format_factory=>t_format_name,
@@ -64,7 +68,8 @@ class zcl_time_format_factory definition
            "! <p class="shorttext synchronized" lang="EN"></p>
            t_country_format_map type hashed table of zcl_time_format_factory=>t_country_format with unique key key.
 
-    constants: "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
+    constants:
+               "! <p class="shorttext synchronized" lang="EN">All implemented formats</p>
                begin of implemented_format,
                  begin of _24h,
                    code type zcl_time_format_factory=>t_format_code value cl_abap_timefm=>fm_24h,
@@ -92,7 +97,7 @@ class zcl_time_format_factory definition
     "! If the key is found in the hash-map, return the existing instance.
     "! If the key is not found, create a new instance, add it to the hash-map, and return it.
     "!
-    "!  @parameter i_key | <p class="shorttext synchronized" lang="en"></p>
+    "! @parameter i_key | <p class="shorttext synchronized" lang="en"></p>
     "! @parameter i_constructor_parameter | <p class="shorttext synchronized" lang="en"></p>
     "! @parameter r_format | <p class="shorttext synchronized" lang="en"></p>
     "! @raising zcx_time_format | <p class="shorttext synchronized" lang="en"></p>

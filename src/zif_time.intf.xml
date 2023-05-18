@@ -12,14 +12,74 @@
    </VSEOINTERF>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>ADD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Adds values of provided arguments to this time</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>CHECK</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Throws an error if this time is not valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>EQUALS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns true if both times have the same valid value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HOUR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the hour (0-23)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_EARLIER_THAN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns true of the supplied time is ahead</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_EARLIER_THAN_OR_EQUAL_TO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns true of the supplied time is ahead or equal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_LATER_THAN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns true of the supplied time is behind</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_LATER_THAN_OR_EQUAL_TO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns true of the supplied time is behind or equal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>IS_VALID</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this time is valid</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MINUTES_SINCE_MIDNIGHT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the minutes since 00:00 (0-1440)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MINUTE_OF_HOUR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns minute of the hour (0-59)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SECONDS_SINCE_MIDNIGHT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns the seconds since 00:00 (0-86400)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SECOND_OF_MINUTE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns second of the minute (0-59)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SUBTRACT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Adds values of provided arguments to this time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_FORMAT</CMPNAME>
