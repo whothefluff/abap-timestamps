@@ -3,34 +3,14 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_TIMESTAMP</CLSNAME>
+    <CLSNAME>ZCL_TIMESTAMP_V2</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>A timestamp of type p in form yyyymmddhhmmss.sssssss</DESCRIPT>
+    <DESCRIPT>A time stamp of type time stamp</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
-   <TPOOL>
-    <item>
-     <ID>I</ID>
-     <KEY>001</KEY>
-     <ENTRY>Time stamp was not converted into a local time</ENTRY>
-     <LENGTH>92</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>002</KEY>
-     <ENTRY>Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ</ENTRY>
-     <LENGTH>132</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>003</KEY>
-     <ENTRY>Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone</ENTRY>
-     <LENGTH>132</LENGTH>
-    </item>
-   </TPOOL>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
      <CMPNAME>A_DATE_FACTORY</CMPNAME>

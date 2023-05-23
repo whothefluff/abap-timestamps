@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOINTERF>
-    <CLSNAME>ZIF_TIMESTAMP_FACTORY</CLSNAME>
+    <CLSNAME>ZIF_TIMESTAMP_V2_FACTORY</CLSNAME>
     <LANGU>E</LANGU>
     <DESCRIPT>Time stamp factory</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
@@ -72,9 +72,9 @@
      <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>FROM_V2</CMPNAME>
+     <CMPNAME>FROM_V1</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Create time stamp v1 from time stamp v2 with the same value</DESCRIPT>
+     <DESCRIPT>Create time stamp v2 from time stamp v1 with the same value</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>INITIAL</CMPNAME>

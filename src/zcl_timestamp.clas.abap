@@ -17,6 +17,8 @@ class zcl_timestamp definition
              valid_value_or_fallback for zif_timestamp~valid_value_or_fallback,
              valid_short_value_or_error for zif_timestamp~valid_short_value_or_error,
              valid_short_value_or_fallback for zif_timestamp~valid_short_value_or_fallback,
+             to_format_iso_8601 for zif_timestamp~to_format_iso_8601,
+             to_format_iso_9075 for zif_timestamp~to_format_iso_9075,
              is_daylight_saving_time for zif_timestamp~is_daylight_saving_time,
              add for zif_timestamp~add,
              subtract for zif_timestamp~subtract,
@@ -358,6 +360,16 @@ class zcl_timestamp implementation.
   method zif_timestamp~is_later_than_or_equal_to.
 
     r_bool = xsdbool( me->valid_value_or_error( ) ge i_another_timestamp->valid_value_or_error( ) ).
+
+  endmethod.
+  method zif_timestamp~to_format_iso_8601.
+
+    r_formatted_timestamp = |{ me->valid_value_or_error( ) timestamp = iso }|.
+
+  endmethod.
+  method zif_timestamp~to_format_iso_9075.
+
+    r_formatted_timestamp = |{ me->valid_value_or_error( ) timestamp = space }|.
 
   endmethod.
 

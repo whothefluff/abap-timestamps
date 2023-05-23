@@ -16,6 +16,9 @@ class zcl_timestamp_factory definition
              from_country_and_region_tz for zif_timestamp_factory~from_country_and_region_tz,
              from_country_and_zip_code_tz for zif_timestamp_factory~from_country_and_zip_code_tz,
              from_country_tz for zif_timestamp_factory~from_country_tz,
+             from_v2 for zif_timestamp_factory~from_v2,
+             from_iso_8601_formatted for zif_timestamp_factory~from_iso_8601_formatted,
+             from_iso_9075_formatted for zif_timestamp_factory~from_iso_9075_formatted,
              null for zif_timestamp_factory~null,
              initial for zif_timestamp_factory~initial,
              min for zif_timestamp_factory~min,
@@ -161,6 +164,34 @@ class zcl_timestamp_factory implementation.
   method zif_timestamp_factory~null.
 
     raise exception type zcx_timestamp. "not possible for type p
+
+  endmethod.
+  method zif_timestamp_factory~from_v2.
+
+    r_timestamp = new zcl_timestamp( cl_abap_tstmp=>utclong2tstmp( i_timestamp->valid_value_or_error( ) ) ).
+
+  endmethod.
+  method zif_timestamp_factory~from_iso_8601_formatted.
+
+    try.
+
+      cl_abap_utclong=>read_iso_format( exporting string = i_formatted_timestamp
+                                        importing value = data(ts) ).
+
+      r_timestamp = new zcl_timestamp( cl_abap_tstmp=>utclong2tstmp( ts ) )->check( ).
+
+    catch cx_abap_utclong_invalid
+          cx_sy_conversion_no_date_time
+          cx_parameter_invalid_range into data(error).
+
+      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+
+    endtry.
+
+  endmethod.
+  method zif_timestamp_factory~from_iso_9075_formatted.
+
+    r_timestamp = me->from_iso_8601_formatted( i_formatted_timestamp ).
 
   endmethod.
 

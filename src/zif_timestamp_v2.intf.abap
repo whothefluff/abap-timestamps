@@ -1,20 +1,17 @@
-"! <p class="shorttext synchronized" lang="EN">A time stamp of type p in form yyyymmddhhmmss.sssssss</p>
+"! <p class="shorttext synchronized" lang="EN">A time stamp of type time stamp</p>
 "! Assumes its a <strong>UTC</strong> time stamp
 "! <br/>Uses the corresponding XML Schema Data Type to allow serializations and deserializations
-interface zif_timestamp public.
+interface zif_timestamp_v2 public.
 
   "! <p class="shorttext synchronized" lang="EN">Internal type</p>
-  types t_value type xsddatetime_long_z.
-
-  "! <p class="shorttext synchronized" lang="EN">Internal type without milliseconds</p>
-  types t_short_value type xsddatetime_z.
+  types t_value type utclong.
 
   "! <p class="shorttext synchronized" lang="EN">Returns the value of this time stamp as is</p>
   "!
   "! @parameter r_value | <p class="shorttext synchronized" lang="EN"></p>
   methods value
             returning
-              value(r_value) type zif_timestamp=>t_value.
+              value(r_value) type zif_timestamp_v2=>t_value.
 
   "! <p class="shorttext synchronized" lang="EN">Returns the value of this time stamp if it's valid</p>
   "! If this time stamp is not valid, an error is thrown
@@ -23,7 +20,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods valid_value_or_error
             returning
-              value(r_valid_value) type zif_timestamp=>t_value
+              value(r_valid_value) type zif_timestamp_v2=>t_value
             raising
               zcx_timestamp.
 
@@ -34,38 +31,9 @@ interface zif_timestamp public.
   "! @parameter r_valid_value | <p class="shorttext synchronized" lang="EN"></p>
   methods valid_value_or_fallback
             importing
-              i_fallback type zif_timestamp=>t_value
+              i_fallback type zif_timestamp_v2=>t_value
             returning
-              value(r_valid_value) type zif_timestamp=>t_value.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns this value as is without milliseconds</p>
-  "!
-  "! @parameter r_short_value | <p class="shorttext synchronized" lang="EN"></p>
-  methods short_value
-            returning
-              value(r_short_value) type zif_timestamp=>t_short_value.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns the short value of this time stamp if it's valid</p>
-  "! If this time stamp is not valid, an error is thrown
-  "!
-  "! @parameter r_valid_short_value | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods valid_short_value_or_error
-            returning
-              value(r_valid_short_value) type zif_timestamp=>t_short_value
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns the short value of this time stamp if it's valid</p>
-  "! If this time stamp is not valid, a fallback value is returned (which may in turn be also invalid)
-  "!
-  "! @parameter i_fallback | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_valid_short_value | <p class="shorttext synchronized" lang="EN"></p>
-  methods valid_short_value_or_fallback
-            importing
-              i_fallback type zif_timestamp=>t_short_value
-            returning
-              value(r_valid_short_value) type zif_timestamp=>t_short_value.
+              value(r_valid_value) type zif_timestamp_v2=>t_value.
 
   "! <p class="shorttext synchronized" lang="EN">Throws an error if this time stamp is not valid</p>
   "!
@@ -73,7 +41,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods check
             returning
-              value(r_self) type ref to zif_timestamp
+              value(r_self) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -379,7 +347,7 @@ interface zif_timestamp public.
               i_hours type i optional
               i_days type i optional
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -398,7 +366,7 @@ interface zif_timestamp public.
               i_hours type i optional
               i_days type i optional
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -409,7 +377,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods seconds_of_difference_with
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_diff_in_secs) type decfloat34
             raising
@@ -422,7 +390,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods equals
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_bool) type xsdboolean
             raising
@@ -435,7 +403,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods is_earlier_than
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_bool) type xsdboolean
             raising
@@ -448,7 +416,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods is_later_than
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_bool) type xsdboolean
             raising
@@ -461,7 +429,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods is_earlier_than_or_equal_to
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_bool) type xsdboolean
             raising
@@ -474,7 +442,7 @@ interface zif_timestamp public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods is_later_than_or_equal_to
             importing
-              i_another_timestamp type ref to zif_timestamp
+              i_another_timestamp type ref to zif_timestamp_v2
             returning
               value(r_bool) type xsdboolean
             raising

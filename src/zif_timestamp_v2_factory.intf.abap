@@ -1,20 +1,20 @@
 "! <p class="shorttext synchronized" lang="EN">Time stamp factory</p>
-"! Creates instances of {@link ZIF_TIMESTAMP}
-interface zif_timestamp_factory public.
+"! Creates instances of {@link ZIF_TIMESTAMP_V2}
+interface zif_timestamp_v2_factory public.
 
   "! <p class="shorttext synchronized" lang="EN">Creates a UTC time stamp from the system time and date</p>
   "! The precision of the decimal places of the generated time stamp depends on the hardware (processor) of the host computer of the current AS instance.
   "! Resolutions in the one-digit or two-digit microsecond range are realistic.
   methods current
             returning
-              value(r_current_timestamp) type ref to zif_timestamp.
+              value(r_current_timestamp) type ref to zif_timestamp_v2.
 
   "! <p class="shorttext synchronized" lang="EN">Null value</p>
   "!
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods null
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -23,7 +23,7 @@ interface zif_timestamp_factory public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods initial
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -32,7 +32,7 @@ interface zif_timestamp_factory public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods min
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -41,7 +41,7 @@ interface zif_timestamp_factory public.
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods max
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -59,7 +59,7 @@ interface zif_timestamp_factory public.
               i_time type ref to zif_time
               i_timezone type ref to zif_time_zone
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
@@ -77,7 +77,7 @@ interface zif_timestamp_factory public.
               i_date type ref to zif_date
               i_time type ref to zif_time
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
@@ -95,7 +95,7 @@ interface zif_timestamp_factory public.
               i_date type ref to zif_date
               i_time type ref to zif_time
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -111,7 +111,7 @@ interface zif_timestamp_factory public.
               i_date type ref to zif_date
               i_time type ref to zif_time
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -130,7 +130,7 @@ interface zif_timestamp_factory public.
               i_date type ref to zif_date
               i_time type ref to zif_time
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
@@ -147,7 +147,7 @@ interface zif_timestamp_factory public.
               i_date type ref to zif_date
               i_time type ref to zif_time
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -164,9 +164,9 @@ interface zif_timestamp_factory public.
             importing
               i_date type ref to zif_date
               i_time type ref to zif_time
-              i_country type land1
+              i_country type I_Country-Country
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
@@ -185,10 +185,10 @@ interface zif_timestamp_factory public.
             importing
               i_date type ref to zif_date
               i_time type ref to zif_time
-              i_country type land1
-              i_region type regio
+              i_country type I_Country-Country
+              i_region type I_Region-Region
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
@@ -207,24 +207,24 @@ interface zif_timestamp_factory public.
             importing
               i_date type ref to zif_date
               i_time type ref to zif_time
-              i_country type land1
+              i_country type I_Country-Country
               i_zip_code type tznzipgene
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp
               zcx_time_zone.
 
-  "! <p class="shorttext synchronized" lang="EN">Create time stamp v1 from time stamp v2 with the same value</p>
+  "! <p class="shorttext synchronized" lang="EN">Create time stamp v2 from time stamp v1 with the same value</p>
   "!
   "! @parameter i_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods from_v2
+  methods from_v1
             importing
-              i_timestamp type ref to zif_timestamp_v2
+              i_timestamp type ref to zif_timestamp
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -236,7 +236,7 @@ interface zif_timestamp_factory public.
             importing
               i_formatted_timestamp type string
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 
@@ -248,7 +248,7 @@ interface zif_timestamp_factory public.
             importing
               i_formatted_timestamp type string
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_timestamp) type ref to zif_timestamp_v2
             raising
               zcx_timestamp.
 

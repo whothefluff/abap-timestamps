@@ -121,7 +121,7 @@ interface zif_date public.
   "! @raising zcx_date_format | <p class="shorttext synchronized" lang="EN"></p>
   methods to_format_of_country
             importing
-              i_country type land1
+              i_country type I_Country-Country
             returning
               value(r_formatted_date) type string
             raising

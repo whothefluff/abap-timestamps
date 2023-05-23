@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOINTERF>
-    <CLSNAME>ZIF_TIMESTAMP</CLSNAME>
+    <CLSNAME>ZIF_TIMESTAMP_V2</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>A time stamp of type p in form yyyymmddhhmmss.sssssss</DESCRIPT>
+    <DESCRIPT>A time stamp of type time stamp</DESCRIPT>
     <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
@@ -60,11 +60,6 @@
      <CMPNAME>SECONDS_OF_DIFFERENCE_WITH</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns time difference between this time stamp and other</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>SHORT_VALUE</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns this value as is without milliseconds</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SUBTRACT</CMPNAME>
@@ -172,24 +167,9 @@
      <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>T_SHORT_VALUE</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Internal type without milliseconds</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
      <CMPNAME>T_VALUE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Internal type</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>VALID_SHORT_VALUE_OR_ERROR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the short value of this time stamp if it&apos;s valid</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>VALID_SHORT_VALUE_OR_FALLBACK</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the short value of this time stamp if it&apos;s valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>VALID_VALUE_OR_ERROR</CMPNAME>
