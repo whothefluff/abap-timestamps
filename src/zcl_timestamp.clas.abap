@@ -145,7 +145,7 @@ class zcl_timestamp implementation.
   endmethod.
   method zif_timestamp~short_value.
 
-    cl_abap_tstmp=>move( exporting tstmp_src = conv timestampl( me->valid_value_or_error( ) )
+    cl_abap_tstmp=>move( exporting tstmp_src = conv timestampl( trunc( me->valid_value_or_error( ) ) )
                          importing tstmp_tgt = r_short_value ).
 
   endmethod.
