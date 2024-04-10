@@ -193,11 +193,11 @@ class zcl_timestamp implementation.
                                  when 0
                                  then is_dst
                                  when 4
-                                 then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp was not converted into a local time'(001) ) )
+                                 then throw zcx_timestamp( new zcl_text_symbol_message( 'Time stamp was not converted into a local time'(001) ) )
                                  when 8
-                                 then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
+                                 then throw zcx_timestamp( new zcl_text_symbol_message( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
                                  when 12 "#EC NUMBER_OK
-                                 then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
+                                 then throw zcx_timestamp( new zcl_text_symbol_message( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
                                  else throw zcx_timestamp( ) ).
 
   endmethod.

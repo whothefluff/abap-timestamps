@@ -207,11 +207,11 @@ class zcl_date_factory implementation.
                        when 0
                        then new zcl_date( date )
                        when 4
-                       then throw zcx_time_zone( new zcl_text_symbol_msg( 'Time stamp was not converted into a local time'(001) ) )
+                       then throw zcx_time_zone( new zcl_text_symbol_message( 'Time stamp was not converted into a local time'(001) ) )
                        when 8
-                       then throw zcx_time_zone( new zcl_text_symbol_msg( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
+                       then throw zcx_time_zone( new zcl_text_symbol_message( 'Time stamp could not be converted because the specified time zone is not in the DDIC database table TTZZ'(002) ) )
                        when 12 "#EC NUMBER_OK
-                       then throw zcx_timestamp( new zcl_text_symbol_msg( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
+                       then throw zcx_timestamp( new zcl_text_symbol_message( 'Time stamp could not be converted since it contains an invalid value or produces an invalid date when combined with the time zone'(003) ) )
                        else throw zcx_timestamp( ) ).
 
   endmethod.
@@ -311,7 +311,7 @@ class zcl_date_factory implementation.
 
     catch cx_sy_conversion_no_date_time into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 
@@ -420,7 +420,7 @@ class zcl_date_factory implementation.
 
     else.
 
-      raise exception new zcx_date( new zcl_text_symbol_msg( cond #( when sy-subrc eq 1
+      raise exception new zcx_date( new zcl_text_symbol_message( cond #( when sy-subrc eq 1
                                                                      then 'Year is not valid'(004)
                                                                      else 'Internal error'(005) ) ) ).
 
@@ -501,7 +501,7 @@ class zcl_date_factory implementation.
     catch cx_scal into data(error).
 
       raise exception new zcx_date( i_previous = error
-                                    i_t100_message = new zcl_text_symbol_msg( 'Date cannot be created from parameters'(006) ) ).
+                                    i_t100_message = new zcl_text_symbol_message( 'Date cannot be created from parameters'(006) ) ).
 
     endtry.
 

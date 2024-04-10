@@ -81,7 +81,7 @@ class zcl_timestamp_v2_factory implementation.
           cx_sy_conversion_no_date_time
           cx_parameter_invalid_range into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 
@@ -182,7 +182,7 @@ class zcl_timestamp_v2_factory implementation.
           cx_sy_conversion_no_date_time
           cx_parameter_invalid_range into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 

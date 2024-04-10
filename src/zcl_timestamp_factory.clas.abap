@@ -80,11 +80,11 @@ class zcl_timestamp_factory implementation.
                             when 0
                             then new zcl_timestamp( conv #( ts ) )
                             when 4
-                            then throw zcx_time_zone( new zcl_text_symbol_msg( 'The specified time was converted to a time stamp without time shift'(001) ) )
+                            then throw zcx_time_zone( new zcl_text_symbol_message( 'The specified time was converted to a time stamp without time shift'(001) ) )
                             when 8
-                            then throw zcx_time_zone( new zcl_text_symbol_msg( 'The specified time could not be converted because the specified time zone does not exist in the DDIC database table TTZZ'(002) ) )
+                            then throw zcx_time_zone( new zcl_text_symbol_message( 'The specified time could not be converted because the specified time zone does not exist in the DDIC database table TTZZ'(002) ) )
                             when 12 "#EC NUMBER_OK
-                            then throw zcx_timestamp( new zcl_text_symbol_msg( 'The specified time could not be converted because it contains invalid or inconsistent values'(003) ) )
+                            then throw zcx_timestamp( new zcl_text_symbol_message( 'The specified time could not be converted because it contains invalid or inconsistent values'(003) ) )
                             else throw zcx_timestamp( ) ).
 
   endmethod.
@@ -184,7 +184,7 @@ class zcl_timestamp_factory implementation.
           cx_sy_conversion_no_date_time
           cx_parameter_invalid_range into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 

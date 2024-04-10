@@ -128,7 +128,7 @@ class zcl_timestamp_v2 implementation.
 
     catch cx_sy_conversion_no_date_time into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 
@@ -174,7 +174,7 @@ class zcl_timestamp_v2 implementation.
 
     catch cx_sy_conversion_no_date_time into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 
@@ -194,7 +194,7 @@ class zcl_timestamp_v2 implementation.
           cx_sy_conversion_error
           cx_sy_arithmetic_overflow into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 
@@ -216,7 +216,7 @@ class zcl_timestamp_v2 implementation.
 
     catch cx_sy_conversion_no_date_time into data(error).
 
-      raise exception new zcx_timestamp( new zcl_free_msg( error->get_text( ) ) ).
+      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
 
     endtry.
 

@@ -296,7 +296,7 @@ class zcl_date implementation.
     catch cx_scal into data(error).
 
       raise exception new zcx_date( i_previous = error
-                                    i_t100_message = new zcl_text_symbol_msg( 'Internal error'(001) ) ).
+                                    i_t100_message = new zcl_text_symbol_message( 'Internal error'(001) ) ).
 
     endtry.
 
@@ -313,7 +313,7 @@ class zcl_date implementation.
     catch cx_scal into data(error).
 
       raise exception new zcx_date( i_previous = error
-                                    i_t100_message = new zcl_text_symbol_msg( 'Internal error'(001) ) ).
+                                    i_t100_message = new zcl_text_symbol_message( 'Internal error'(001) ) ).
 
     endtry.
 
@@ -337,13 +337,13 @@ class zcl_date implementation.
       catch cx_scal into data(error).
 
         raise exception new zcx_date( i_previous = error
-                                      i_t100_message = new zcl_text_symbol_msg( 'Internal error'(001) ) ).
+                                      i_t100_message = new zcl_text_symbol_message( 'Internal error'(001) ) ).
 
       endtry.
 
     else.
 
-      raise exception new zcx_date( new zcl_text_symbol_msg( 'Name not found for language'(002) ) ).
+      raise exception new zcx_date( new zcl_text_symbol_message( 'Name not found for language'(002) ) ).
 
     endif.
 
