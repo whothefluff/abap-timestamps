@@ -22,34 +22,9 @@
      <DESCRIPT>Throws an error if this time stamp is not valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>EQUALS</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true if both time stamps have the same valid value</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
      <CMPNAME>IS_DAYLIGHT_SAVING_TIME</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt;when this time stamp is in summer time</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_EARLIER_THAN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied time stamp is ahead</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_EARLIER_THAN_OR_EQUAL_TO</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied time stamp is ahead or equal</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_LATER_THAN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied time stamp is behind</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_LATER_THAN_OR_EQUAL_TO</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied time stamp is behind or equal</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_VALID</CMPNAME>
@@ -115,16 +90,6 @@
      <CMPNAME>TO_DATE_FOR_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns this time stamp in the ISO 8601 format</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>TO_FORMAT_ISO_9075</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns this time stamp in the ISO 9075 format</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_TIME</CMPNAME>
@@ -207,20 +172,6 @@
      <DESCRIPT>Returns the value of this time stamp as is</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
-   <DESCRIPTIONS_SUB>
-    <SEOSUBCOTX>
-     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
-     <SCONAME>R_FORMATTED_TIMESTAMP</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Time stamp as string with external format</DESCRIPT>
-    </SEOSUBCOTX>
-    <SEOSUBCOTX>
-     <CMPNAME>TO_FORMAT_ISO_9075</CMPNAME>
-     <SCONAME>R_FORMATTED_TIMESTAMP</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Time stamp as string with external format</DESCRIPT>
-    </SEOSUBCOTX>
-   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>
