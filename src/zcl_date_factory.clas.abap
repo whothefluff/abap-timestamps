@@ -35,30 +35,10 @@ class zcl_date_factory definition
              from_timestamp_to_curr_user_tz for zif_date_factory~from_timestamp_to_curr_user_tz,
              from_timestamp_to_system_tz for zif_date_factory~from_timestamp_to_system_tz,
              from_timestamp_to_user_tz for zif_date_factory~from_timestamp_to_user_tz,
-             from_timestamp_v2 for zif_date_factory~from_timestamp_v2,
-             from_tstamp_v2_to_utc_tz for zif_date_factory~from_tstamp_v2_to_utc_tz,
-             from_tstamp_v2_to_default_tz for zif_date_factory~from_tstamp_v2_to_default_tz,
-             from_tstamp_v2_to_country_tz for zif_date_factory~from_tstamp_v2_to_country_tz,
-             from_tstamp_v2_to_ctry_regn_tz for zif_date_factory~from_tstamp_v2_to_ctry_regn_tz,
-             from_tstamp_v2_to_ctry_zip_tz for zif_date_factory~from_tstamp_v2_to_ctry_zip_tz,
-             from_tstamp_v2_to_curr_user_tz for zif_date_factory~from_tstamp_v2_to_curr_user_tz,
-             from_tstamp_v2_to_system_tz for zif_date_factory~from_tstamp_v2_to_system_tz,
-             from_tstamp_v2_to_user_tz for zif_date_factory~from_tstamp_v2_to_user_tz,
              null for zif_date_factory~null,
              initial for zif_date_factory~initial,
              min for zif_date_factory~min,
-             max for zif_date_factory~max,
-             today for zif_date_factory~today,
-             tomorrow for zif_date_factory~tomorrow,
-             easter_of_year for zif_date_factory~easter_of_year,
-             first_day_of_next_month_of for zif_date_factory~first_day_of_next_month_of,
-             first_day_of_previous_month_of for zif_date_factory~first_day_of_previous_month_of,
-             first_day_of_same_month_of for zif_date_factory~first_day_of_same_month_of,
-             last_day_of_next_month_of for zif_date_factory~last_day_of_next_month_of,
-             last_day_of_previous_month_of for zif_date_factory~last_day_of_previous_month_of,
-             last_day_of_same_month_of for zif_date_factory~last_day_of_same_month_of,
-             first_day_of_year_and_week for zif_date_factory~first_day_of_year_and_week,
-             yesterday for zif_date_factory~yesterday.
+             max for zif_date_factory~max.
 
     "! <p class="shorttext synchronized" lang="EN">Instantiates a date factory</p>
     "!
@@ -305,71 +285,6 @@ class zcl_date_factory implementation.
                                  i_to_time_zone = me->a_time_zone_factory->utc( ) ).
 
   endmethod.
-  method zif_date_factory~from_timestamp_v2.
-
-    try.
-      "no need to use 'valid_value_or_error' for time zone since this statement checks anyway
-      convert utclong i_timestamp->valid_value_or_error( ) time zone i_to_time_zone->value( ) into date data(date).
-
-      r_date = new zcl_date( date ).
-
-    catch cx_sy_conversion_no_date_time into data(error).
-
-      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
-
-    endtry.
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_country_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country( i_country ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_ctry_regn_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country_and_region( i_country = i_country
-                                                                                                       i_region = i_region ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_ctry_zip_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country_and_zip_code( i_country = i_country
-                                                                                                         i_zip_code = i_zip_code ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_curr_user_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_current_user( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_system_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->system( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_user_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_user( i_user ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_default_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->default( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_utc_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->utc( ) ).
-
-  endmethod.
   method zif_date_factory~initial.
 
     r_date = new zcl_date( '00000000' ). "not valid
@@ -388,126 +303,6 @@ class zcl_date_factory implementation.
   method zif_date_factory~null.
 
     r_date = new zcl_date( '        ' ). "not valid
-
-  endmethod.
-  method zif_date_factory~today.
-
-    r_date = new zcl_date( cl_abap_context_info=>get_system_date( ) )->check( ).
-
-  endmethod.
-  method zif_date_factory~tomorrow.
-
-    r_date = new zcl_date( conv #( me->today( )->value( ) + 1 ) )->check( ). "check necessary for today( ) EQ max( )
-
-  endmethod.
-  method zif_date_factory~yesterday.
-
-    r_date = new zcl_date( conv #( me->today( )->value( ) - 1 ) )->check( ). "check necessary for today( ) EQ min( )
-
-  endmethod.
-  method zif_date_factory~easter_of_year.
-
-    data(easter_date) = value d( ).
-
-    call function 'EASTER_GET_DATE'
-      exporting
-        year         = conv cyear( i_year )
-      importing
-        easterdate   = easter_date
-      exceptions
-        year_invalid = 1
-        others       = 2.
-
-    if sy-subrc eq 0.
-
-      r_date = new zcl_date( easter_date )->check( ).
-
-    else.
-
-      raise exception new zcx_date( new zcl_text_symbol_message( cond #( when sy-subrc eq 1
-                                                                     then 'Year is not valid'(004)
-                                                                     else 'Internal error'(005) ) ) ).
-
-    endif.
-
-  endmethod.
-  method zif_date_factory~first_day_of_next_month_of.
-
-    types two_chars_month type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->valid_value_or_error( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars_month( i_date->month( ) + 1 ) && `01` ) ) ).
-
-  endmethod.
-  method zif_date_factory~first_day_of_previous_month_of.
-
-    types two_chars_month type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->valid_value_or_error( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars_month( i_date->month( ) - 1 ) && `01` ) ) ).
-
-  endmethod.
-  method zif_date_factory~first_day_of_same_month_of.
-
-    types two_chars_month type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars_month( i_date->month( ) ) && `01` ) ) ).
-
-  endmethod.
-  method zif_date_factory~last_day_of_next_month_of.
-
-    types two_chars type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars( i_date->month( ) + 1 ) && conv two_chars( i_date->last_day_of_next_month( ) ) ) ) ).
-
-  endmethod.
-  method zif_date_factory~last_day_of_previous_month_of.
-
-    types two_chars type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars( i_date->month( ) - 1 ) && conv two_chars( i_date->last_day_of_previous_month( ) ) ) ) ).
-
-  endmethod.
-  method zif_date_factory~last_day_of_same_month_of.
-
-    types two_chars type n length 2.
-
-    r_date = new zcl_date( conv d( replace( val = i_date->value( ) "month( ) already checks validity
-                                            off = 4
-                                            len = 4
-                                            with = conv two_chars( i_date->month( ) ) && conv two_chars( i_date->last_day_of_month( ) ) ) ) ).
-
-  endmethod.
-  method zif_date_factory~first_day_of_year_and_week.
-
-    try.
-
-      cl_scal_utils=>week_get_first_day( exporting iv_year_week = value #( )
-                                                   iv_year = conv #( i_year )
-                                                   iv_week = conv #( i_week )
-                                         importing ev_date = data(date) ).
-
-      r_date = new zcl_date( date )->check( ).
-
-    catch cx_scal into data(error).
-
-      raise exception new zcx_date( i_previous = error
-                                    i_t100_message = new zcl_text_symbol_message( 'Date cannot be created from parameters'(006) ) ).
-
-    endtry.
 
   endmethod.
 

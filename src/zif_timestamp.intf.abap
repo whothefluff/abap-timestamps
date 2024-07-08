@@ -370,7 +370,7 @@ interface zif_timestamp public.
   "! @parameter i_minutes | <p class="shorttext synchronized" lang="EN"></p>
   "! @parameter i_hours | <p class="shorttext synchronized" lang="EN"></p>
   "! @parameter i_days | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_self | <p class="shorttext synchronized" lang="EN"></p>
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods add
             importing
@@ -379,7 +379,7 @@ interface zif_timestamp public.
               i_hours type i optional
               i_days type i optional
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_self) type ref to zif_timestamp
             raising
               zcx_timestamp.
 
@@ -389,7 +389,7 @@ interface zif_timestamp public.
   "! @parameter i_minutes | <p class="shorttext synchronized" lang="EN"></p>
   "! @parameter i_hours | <p class="shorttext synchronized" lang="EN"></p>
   "! @parameter i_days | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
+  "! @parameter r_self | <p class="shorttext synchronized" lang="EN"></p>
   "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
   methods subtract
             importing
@@ -398,7 +398,7 @@ interface zif_timestamp public.
               i_hours type i optional
               i_days type i optional
             returning
-              value(r_timestamp) type ref to zif_timestamp
+              value(r_self) type ref to zif_timestamp
             raising
               zcx_timestamp.
 
@@ -412,91 +412,6 @@ interface zif_timestamp public.
               i_another_timestamp type ref to zif_timestamp
             returning
               value(r_diff_in_secs) type decfloat34
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns true if both time stamps have the same valid value</p>
-  "!
-  "! @parameter i_another_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods equals
-            importing
-              i_another_timestamp type ref to zif_timestamp
-            returning
-              value(r_bool) type xsdboolean
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time stamp is ahead</p>
-  "!
-  "! @parameter i_another_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods is_earlier_than
-            importing
-              i_another_timestamp type ref to zif_timestamp
-            returning
-              value(r_bool) type xsdboolean
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time stamp is behind</p>
-  "!
-  "! @parameter i_another_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods is_later_than
-            importing
-              i_another_timestamp type ref to zif_timestamp
-            returning
-              value(r_bool) type xsdboolean
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time stamp is ahead or equal</p>
-  "!
-  "! @parameter i_another_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods is_earlier_than_or_equal_to
-            importing
-              i_another_timestamp type ref to zif_timestamp
-            returning
-              value(r_bool) type xsdboolean
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns true of the supplied time stamp is behind or equal</p>
-  "!
-  "! @parameter i_another_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_bool | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods is_later_than_or_equal_to
-            importing
-              i_another_timestamp type ref to zif_timestamp
-            returning
-              value(r_bool) type xsdboolean
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns this time stamp in the ISO 8601 format</p>
-  "!
-  "! @parameter r_formatted_timestamp | <p class="shorttext synchronized" lang="EN">Time stamp as string with external format</p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods to_format_iso_8601
-            returning
-              value(r_formatted_timestamp) type string
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns this time stamp in the ISO 9075 format</p>
-  "!
-  "! @parameter r_formatted_timestamp | <p class="shorttext synchronized" lang="EN">Time stamp as string with external format</p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods to_format_iso_9075
-            returning
-              value(r_formatted_timestamp) type string
             raising
               zcx_timestamp.
 

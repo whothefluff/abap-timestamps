@@ -22,109 +22,9 @@
      <DESCRIPT>Throws an error if this date is not valid</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>DAY_OF_MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the number of day of the month (1-31)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>DAY_OF_WEEK</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the day of the week (1-7)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>DAY_OF_YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the number of day of the year (1-365)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>EQUALS</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true if both dates have the same valid value</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_EARLIER_THAN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied date is ahead</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_EARLIER_THAN_OR_EQUAL_TO</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied date is ahead or equal</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_LATER_THAN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied date is behind</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_LATER_THAN_OR_EQUAL_TO</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true of the supplied date is behind or equal</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>IS_LEAP_YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns true if February has 29 days</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
      <CMPNAME>IS_VALID</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns &lt;em&gt;true&lt;/em&gt; if this date is valid</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>LAST_DAY_OF_MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the number of the last day of the month (28-31)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>LAST_DAY_OF_NEXT_MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the number of the last day of the next month (28-31)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>LAST_DAY_OF_PREVIOUS_MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the the last day of the previous month (28-31)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>LOCALIZED_NAME_OF_DAY_OF_WEEK</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the name of the day of the week</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>LOCALIZED_NAME_OF_MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the name of month</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>MONTH</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the month (1-12)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>NAME_OF_DAY_OF_WEEK_IN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the name of the day of the week</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>NAME_OF_MONTH_IN</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the name of month</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>NEXT_LEAP_YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the next leap year (exclusive count)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>PREVIOUS_LEAP_YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the previous leap year (exclusive count)</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>SUBTRACT_DAYS</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Subtracts supplied number of days to this date</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TO_FORMAT</CMPNAME>
@@ -235,16 +135,6 @@
      <CMPNAME>VALUE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns the value of this date as is</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>WEEK_OF_YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the number of the week for the year</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>YEAR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns the year</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
