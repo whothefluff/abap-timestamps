@@ -93,7 +93,9 @@ class zcl_date implementation.
     me->a_value = i_value.
 
     me->a_format_factory = cond #( when i_format_factory is supplied
-                                   then i_format_factory
+                                   then cond #( when i_format_factory is bound
+                                                then i_format_factory
+                                                else throw zcx_date_format( ) )
                                    else zcl_date=>a_default_format_factory ).
 
   endmethod.

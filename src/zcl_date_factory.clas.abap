@@ -102,11 +102,15 @@ class zcl_date_factory implementation.
   method constructor.
 
     me->a_format_factory = cond #( when i_format_factory is supplied
-                                   then i_format_factory
+                                   then cond #( when i_format_factory is bound
+                                                then i_format_factory
+                                                else throw zcx_date_format( ) )
                                    else zcl_date_factory=>a_default_format_factory ).
 
     me->a_time_zone_factory = cond #( when i_time_zone_factory is supplied
-                                      then i_time_zone_factory
+                                      then cond #( when i_time_zone_factory is bound
+                                                   then i_time_zone_factory
+                                                   else throw zcx_time_zone( ) )
                                       else zcl_date_factory=>a_default_time_zone_factory ).
 
   endmethod.

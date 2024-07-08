@@ -75,7 +75,9 @@ class zcl_time implementation.
     me->a_value = i_value.
 
     me->a_format_factory = cond #( when i_format_factory is supplied
-                                   then i_format_factory
+                                   then cond #( when i_format_factory is bound
+                                                then i_format_factory
+                                                else throw zcx_time_format( ) )
                                    else zcl_time=>a_default_format_factory ).
 
   endmethod.
