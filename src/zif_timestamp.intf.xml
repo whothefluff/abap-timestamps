@@ -117,16 +117,6 @@
      <DESCRIPT>Creates a new date from this time stamp and returns it</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns this time stamp in the ISO 8601 format</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>TO_FORMAT_ISO_9075</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Returns this time stamp in the ISO 9075 format</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
      <CMPNAME>TO_TIME</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a new time from this time stamp and returns it</DESCRIPT>
@@ -207,20 +197,6 @@
      <DESCRIPT>Returns the value of this time stamp as is</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
-   <DESCRIPTIONS_SUB>
-    <SEOSUBCOTX>
-     <CMPNAME>TO_FORMAT_ISO_8601</CMPNAME>
-     <SCONAME>R_FORMATTED_TIMESTAMP</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Time stamp as string with external format</DESCRIPT>
-    </SEOSUBCOTX>
-    <SEOSUBCOTX>
-     <CMPNAME>TO_FORMAT_ISO_9075</CMPNAME>
-     <SCONAME>R_FORMATTED_TIMESTAMP</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Time stamp as string with external format</DESCRIPT>
-    </SEOSUBCOTX>
-   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

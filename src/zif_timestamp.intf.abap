@@ -480,24 +480,4 @@ interface zif_timestamp public.
             raising
               zcx_timestamp.
 
-  "! <p class="shorttext synchronized" lang="EN">Returns this time stamp in the ISO 8601 format</p>
-  "!
-  "! @parameter r_formatted_timestamp | <p class="shorttext synchronized" lang="EN">Time stamp as string with external format</p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods to_format_iso_8601
-            returning
-              value(r_formatted_timestamp) type string
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Returns this time stamp in the ISO 9075 format</p>
-  "!
-  "! @parameter r_formatted_timestamp | <p class="shorttext synchronized" lang="EN">Time stamp as string with external format</p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods to_format_iso_9075
-            returning
-              value(r_formatted_timestamp) type string
-            raising
-              zcx_timestamp.
-
 endinterface.

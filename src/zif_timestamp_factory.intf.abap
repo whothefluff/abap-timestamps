@@ -215,41 +215,4 @@ interface zif_timestamp_factory public.
               zcx_timestamp
               zcx_time_zone.
 
-  "! <p class="shorttext synchronized" lang="EN">Create time stamp v1 from time stamp v2 with the same value</p>
-  "!
-  "! @parameter i_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods from_v2
-            importing
-              i_timestamp type ref to zif_timestamp_v2
-            returning
-              value(r_timestamp) type ref to zif_timestamp
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Creates a new time stamp from a string in ISO format</p>
-  "!
-  "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods from_iso_8601_formatted
-            importing
-              i_formatted_timestamp type string
-            returning
-              value(r_timestamp) type ref to zif_timestamp
-            raising
-              zcx_timestamp.
-
-  "! <p class="shorttext synchronized" lang="EN">Creates a new time stamp from a string in ISO format</p>
-  "!
-  "! @parameter r_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  "! @raising zcx_timestamp | <p class="shorttext synchronized" lang="EN"></p>
-  methods from_iso_9075_formatted
-            importing
-              i_formatted_timestamp type string
-            returning
-              value(r_timestamp) type ref to zif_timestamp
-            raising
-              zcx_timestamp.
-
 endinterface.

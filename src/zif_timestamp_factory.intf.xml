@@ -47,16 +47,6 @@
      <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
-     <CMPNAME>FROM_ISO_8601_FORMATTED</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Creates a new time stamp from a string in ISO format</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>FROM_ISO_9075_FORMATTED</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Creates a new time stamp from a string in ISO format</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
      <CMPNAME>FROM_SYSTEM_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
@@ -70,11 +60,6 @@
      <CMPNAME>FROM_UTC_TZ</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Creates a UTC time stamp from the provided date and time</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>FROM_V2</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Create time stamp v1 from time stamp v2 with the same value</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>INITIAL</CMPNAME>

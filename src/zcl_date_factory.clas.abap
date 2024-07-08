@@ -35,15 +35,6 @@ class zcl_date_factory definition
              from_timestamp_to_curr_user_tz for zif_date_factory~from_timestamp_to_curr_user_tz,
              from_timestamp_to_system_tz for zif_date_factory~from_timestamp_to_system_tz,
              from_timestamp_to_user_tz for zif_date_factory~from_timestamp_to_user_tz,
-             from_timestamp_v2 for zif_date_factory~from_timestamp_v2,
-             from_tstamp_v2_to_utc_tz for zif_date_factory~from_tstamp_v2_to_utc_tz,
-             from_tstamp_v2_to_default_tz for zif_date_factory~from_tstamp_v2_to_default_tz,
-             from_tstamp_v2_to_country_tz for zif_date_factory~from_tstamp_v2_to_country_tz,
-             from_tstamp_v2_to_ctry_regn_tz for zif_date_factory~from_tstamp_v2_to_ctry_regn_tz,
-             from_tstamp_v2_to_ctry_zip_tz for zif_date_factory~from_tstamp_v2_to_ctry_zip_tz,
-             from_tstamp_v2_to_curr_user_tz for zif_date_factory~from_tstamp_v2_to_curr_user_tz,
-             from_tstamp_v2_to_system_tz for zif_date_factory~from_tstamp_v2_to_system_tz,
-             from_tstamp_v2_to_user_tz for zif_date_factory~from_tstamp_v2_to_user_tz,
              null for zif_date_factory~null,
              initial for zif_date_factory~initial,
              min for zif_date_factory~min,
@@ -303,71 +294,6 @@ class zcl_date_factory implementation.
 
     r_date = me->from_timestamp( i_timestamp = i_timestamp
                                  i_to_time_zone = me->a_time_zone_factory->utc( ) ).
-
-  endmethod.
-  method zif_date_factory~from_timestamp_v2.
-
-    try.
-      "no need to use 'valid_value_or_error' for time zone since this statement checks anyway
-      convert utclong i_timestamp->valid_value_or_error( ) time zone i_to_time_zone->value( ) into date data(date).
-
-      r_date = new zcl_date( date ).
-
-    catch cx_sy_conversion_no_date_time into data(error).
-
-      raise exception new zcx_timestamp( new zcl_free_message( error->get_text( ) ) ).
-
-    endtry.
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_country_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country( i_country ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_ctry_regn_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country_and_region( i_country = i_country
-                                                                                                       i_region = i_region ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_ctry_zip_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_country_and_zip_code( i_country = i_country
-                                                                                                         i_zip_code = i_zip_code ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_curr_user_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_current_user( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_system_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->system( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_user_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->from_user( i_user ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_default_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->default( ) ).
-
-  endmethod.
-  method zif_date_factory~from_tstamp_v2_to_utc_tz.
-
-    r_date = me->from_timestamp_v2( i_timestamp = i_timestamp
-                                    i_to_time_zone = me->a_time_zone_factory->utc( ) ).
 
   endmethod.
   method zif_date_factory~initial.
