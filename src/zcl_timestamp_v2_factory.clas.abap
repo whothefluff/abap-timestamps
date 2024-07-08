@@ -56,7 +56,9 @@ class zcl_timestamp_v2_factory implementation.
   method constructor.
 
     me->a_time_zone_factory = cond #( when i_time_zone_factory is supplied
-                                      then i_time_zone_factory
+                                      then cond #( when i_time_zone_factory is bound
+                                                   then i_time_zone_factory
+                                                   else throw zcx_time_zone( ) )
                                       else zcl_timestamp_v2_factory=>a_default_time_zone_factory ).
 
   endmethod.

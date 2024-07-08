@@ -91,11 +91,15 @@ class zcl_timestamp_v2 implementation.
     me->a_value = i_value.
 
     me->a_date_factory = cond #( when i_date_factory is supplied
-                                 then i_date_factory
+                                 then cond #( when i_date_factory is bound
+                                              then i_date_factory
+                                              else throw zcx_date( ) )
                                  else zcl_timestamp_v2=>a_default_date_factory ).
 
     me->a_time_factory = cond #( when i_time_factory is supplied
-                                 then i_time_factory
+                                 then cond #( when i_time_factory is bound
+                                              then i_time_factory
+                                              else throw zcx_time( ) )
                                  else zcl_timestamp_v2=>a_default_time_factory ).
 
   endmethod.
